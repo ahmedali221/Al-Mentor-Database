@@ -1,4 +1,4 @@
-const ProgramCourse = require("../models/Programs Section/programCourse");
+const ProgramCourse = require("../../models/Programs/programCourse");
 
 const createProgramCourse = async (req, res) => {
   try {
@@ -12,8 +12,8 @@ const createProgramCourse = async (req, res) => {
 const getAllProgramCourses = async (req, res) => {
   try {
     const programCourses = await ProgramCourse.find()
-      .populate('programId')
-      .populate('courseId');
+      .populate("programId")
+      .populate("courseId");
     res.status(200).json(programCourses);
   } catch (error) {
     res.status(500).json({ message: error.message });
@@ -23,8 +23,8 @@ const getAllProgramCourses = async (req, res) => {
 const getProgramCourseById = async (req, res) => {
   try {
     const programCourse = await ProgramCourse.findById(req.params.id)
-      .populate('programId')
-      .populate('courseId');
+      .populate("programId")
+      .populate("courseId");
     if (!programCourse) {
       return res.status(404).json({ message: "Program Course not found" });
     }

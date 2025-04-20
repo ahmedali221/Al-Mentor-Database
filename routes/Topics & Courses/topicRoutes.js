@@ -8,7 +8,7 @@ const {
   updateTopic,
   deleteTopic,
   getTopicsByLesson,
-} = require("../controllers/Topics & Courses/topicController");
+} = require("../../controllers/Topics & Courses/topicController");
 
 router.post("/", createTopic);
 router.get("/", getAllTopics);

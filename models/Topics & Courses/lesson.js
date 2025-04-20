@@ -1,3 +1,5 @@
+const mongoose = require("mongoose");
+
 const lessonSchema = new mongoose.Schema(
   {
     title: {
@@ -7,7 +9,7 @@ const lessonSchema = new mongoose.Schema(
       maxlength: 100,
     },
     module: {
-      type: Schema.Types.ObjectId,
+      type: mongoose.Schema.Types.ObjectId,
       ref: "Module",
       required: true,
     },

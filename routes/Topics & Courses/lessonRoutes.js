@@ -6,7 +6,7 @@ const {
   getLessonById,
   updateLesson,
   deleteLesson,
-} = require("../controllers/Topics & Courses/lessonController");
+} = require("../../controllers/Topics & Courses/lessonController");
 
 router.post("/", createLesson);
 router.get("/course/:courseId", getLessonsByCourse);

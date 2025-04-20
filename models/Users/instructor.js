@@ -59,7 +59,7 @@ const instructorSchema = mongoose.Schema(
 );
 
 // Indexes
-instructorSchema.index({ user: 1 }, { unique: true });
+// Remove duplicate user index and keep only these
 instructorSchema.index({ expertiseAreas: 1 });
 instructorSchema.index({ approvalStatus: 1 });
 

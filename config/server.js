@@ -3,22 +3,24 @@ const connectDB = require("./db");
 // Users Routes
 const userRoutes = require("../routes/Users/userRoute");
 const instructorRoutes = require("../routes/Users/instructorRoutes");
+const userSavedCourseRoutes = require("../routes/Users/userSavedCourseRoutes");
 
 // Courses Routes
 const courseRoutes = require("../routes/Topics & Courses/courseRoutes");
 const lessonRoutes = require("../routes/Topics & Courses/lessonRoutes");
 const moduleRoutes = require("../routes/Topics & Courses/moduleRoutes");
 const topicRoutes = require("../routes/Topics & Courses/topicRoutes");
-const subtopicRoutes = require("../routes/Topics & Courses/subTopicsRoutes");
-const favoriteLessonRoutes = require("./routes/Topics & Courses/favoriteLessonRoutes");
+const subTopicRoutes = require("../routes/Topics & Courses/subTopicRoutes");
+const favoriteLessonRoutes = require("../routes/Topics & Courses/favoriteLessonRoutes");
 
 // Enrollment Routes
-const enrollmentRoutes = require("../routes/Subscription & Payment/enrollmentRoutes");
-const paymentRoutes = require("../routes/Subscription & Payment/paymentRoutes");
-const subscriptionPlanRoutes = require("../routes/Subscription & Payment/subscriptionPlanRoutes");
+const enrollmentRoutes = require("../routes/Subscription & Payment/EnrollmentRoutes");
+const paymentRoutes = require("../routes/Subscription & Payment/PaymentRoutes");
+const subscriptionRoutes = require("../routes/Subscription & Payment/subscriptionRoutes");
 const userSubscriptionRoutes = require("../routes/Subscription & Payment/userSubscriptionRoutes");
+
 // Programs Routes
-const programRoutes = require("../routes/Programs/programRoutes");
+const programRoutes = require("../routes/Programs/programRoute");
 const programCourseRoutes = require("../routes/Programs/programCourseRoute");
 const userProgramProgressRoutes = require("../routes/Programs/userProgramProgressRoute");
 
@@ -40,14 +42,15 @@ connectDB().then(() => {
   // Routes
   app.use("/api/users", userRoutes);
   app.use("/api/instructors", instructorRoutes);
+  app.use("/api/saved-courses", userSavedCourseRoutes);
   app.use("/api/courses", courseRoutes);
   app.use("/api/lessons", lessonRoutes);
   app.use("/api/modules", moduleRoutes);
   app.use("/api/topics", topicRoutes);
-  app.use("/api/subtopics", subtopicRoutes);
+  app.use("/api/subtopics", subTopicRoutes);
   app.use("/api/enrollments", enrollmentRoutes);
   app.use("/api/payments", paymentRoutes);
-  app.use("/api/subscription-plans", subscriptionPlanRoutes);
+  app.use("/api/subscriptions", subscriptionRoutes);
   app.use("/api/user-subscriptions", userSubscriptionRoutes);
   app.use("/api/programs", programRoutes);
   app.use("/api/program-courses", programCourseRoutes);

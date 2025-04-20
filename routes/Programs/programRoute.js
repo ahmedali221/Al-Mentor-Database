@@ -6,7 +6,7 @@ const {
   getProgramById,
   updateProgram,
   deleteProgram,
-} = require("../controllers/Programs/programController");
+} = require("../../controllers/Programs/programController");
 
 router.post("/", createProgram);
 router.get("/", getAllPrograms);

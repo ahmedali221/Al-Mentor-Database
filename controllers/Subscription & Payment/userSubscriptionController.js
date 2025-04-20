@@ -1,5 +1,5 @@
-const UserSubscription = require("../models/Subscriptions & Payment/userSubscription");
-const Subscription = require("../models/Subscriptions & Payment/subscription");
+const UserSubscription = require("../../models/Subscriptions & Payment/userSubscription");
+const Subscription = require("../../models/Subscriptions & Payment/subscription");
 
 exports.subscribeUser = async (req, res) => {
   try {

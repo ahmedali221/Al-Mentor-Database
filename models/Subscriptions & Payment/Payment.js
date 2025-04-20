@@ -45,6 +45,9 @@ const paymentSchema = new mongoose.Schema(
 
 // Indexes for faster queries
 paymentSchema.index({ user: 1 });
+// Remove the duplicate transactionId index if it's defined twice
+paymentSchema.index({ userId: 1 });
+paymentSchema.index({ status: 1 });
 paymentSchema.index({ transactionId: 1 });
 
 module.exports = mongoose.model("Payment", paymentSchema);

@@ -6,7 +6,7 @@ const {
   getSubTopicById,
   updateSubTopic,
   deleteSubTopic,
-} = require("../controllers/Topics & Courses/subTopicController");
+} = require("../../controllers/Topics & Courses/subTopicController");
 
 router.post("/", createSubTopic);
 router.get("/topic/:topicId", getSubTopicsByTopic);

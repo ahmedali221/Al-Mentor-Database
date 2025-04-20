@@ -1,7 +1,7 @@
-const Enrollment = require("../models/Subscriptions & Payment/Enrollment");
-const User = require("../models/Users/user");
-const Course = require("../models/Topics & Courses/course");
-const Subscription = require("../models/Subscriptions & Payment/subscription");
+const Enrollment = require("../../models/Subscriptions & Payment/Enrollment");
+const User = require("../../models/Users/user");
+const Course = require("../../models/Topics & Courses/course");
+const Subscription = require("../../models/Subscriptions & Payment/subscription");
 
 exports.createEnrollment = async (req, res) => {
   try {

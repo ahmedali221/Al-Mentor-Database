@@ -4,7 +4,7 @@ const {
   subscribeUser,
   getUserSubscriptions,
   cancelSubscription,
-} = require("../controllers/Subscription & Payment/userSubscriptionController");
+} = require("../../controllers/Subscription & Payment/userSubscriptionController");
 
 router.post("/", subscribeUser);
 router.get("/:userId", getUserSubscriptions);

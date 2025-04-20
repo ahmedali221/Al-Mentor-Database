@@ -1,4 +1,4 @@
-const Program = require("../models/Programs Section/program");
+const Program = require("../../models/Programs/program");
 
 const createProgram = async (req, res) => {
   try {

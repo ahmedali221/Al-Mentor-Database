@@ -3,7 +3,7 @@ const router = express.Router();
 const {
   createSubscription,
   getAllSubscriptions,
-} = require("../controllers/Subscription & Payment/subscriptionController");
+} = require("../../controllers/Subscription & Payment/subscriptionController");
 
 router.post("/", createSubscription);
 router.get("/", getAllSubscriptions);

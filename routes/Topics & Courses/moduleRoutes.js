@@ -3,7 +3,7 @@ const router = express.Router();
 const {
   createModule,
   getModulesByCourse,
-} = require("../controllers/Topics & Courses/moduleController");
+} = require("../../controllers/Topics & Courses/moduleController");
 
 router.post("/", createModule);
 router.get("/course/:courseId", getModulesByCourse);

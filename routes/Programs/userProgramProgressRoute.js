@@ -7,7 +7,7 @@ const {
   getUserProgramProgressByUserId,
   updateUserProgramProgress,
   deleteUserProgramProgress,
-} = require("../controllers/Programs/userProgramProgressController");
+} = require("../../controllers/Programs/userProgramProgressController");
 
 router.post("/", createUserProgramProgress);
 router.get("/", getAllUserProgramProgress);

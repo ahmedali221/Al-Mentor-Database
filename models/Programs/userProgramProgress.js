@@ -1,3 +1,5 @@
+const mongoose = require("mongoose");
+
 const userProgramProgressSchema = new mongoose.Schema(
   {
     user: {

@@ -1,4 +1,4 @@
-const UserProgramProgress = require("../models/userProgramProgress");
+const UserProgramProgress = require("../../models/Programs/userProgramProgress");
 
 const createUserProgramProgress = async (req, res) => {
   try {

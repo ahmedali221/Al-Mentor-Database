@@ -1,3 +1,4 @@
+const mongoose = require("mongoose");
 const courseSchema = new mongoose.Schema(
   {
     // Core Fields
@@ -40,7 +41,7 @@ const courseSchema = new mongoose.Schema(
     },
     modules: [
       {
-        type: Schema.Types.ObjectId,
+        type: mongoose.Schema.Types.ObjectId,
         ref: "Module",
       },
     ],
@@ -102,6 +103,7 @@ const courseSchema = new mongoose.Schema(
   }
 );
 
+// Keep only these indexes and remove duplicate slug index
 courseSchema.index({ topic: 1 });
 courseSchema.index({ subtopic: 1 });
 courseSchema.index({ language: 1 });

@@ -1,6 +1,6 @@
-const Payment = require("../models/Subscriptions & Payment/Payment");
-const User = require("../models/Users/user");
-const Subscription = require("../models/Subscriptions & Payment/subscription");
+const Payment = require("../../models/Subscriptions & Payment/Payment");
+const User = require("../../models/Users/user");
+const Subscription = require("../../models/Subscriptions & Payment/subscription");
 
 exports.createPayment = async (req, res) => {
   try {
