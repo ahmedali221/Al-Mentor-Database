@@ -55,15 +55,13 @@ const instructorSchema = mongoose.Schema(
   {
     timestamps: true,
     toJSON: { virtuals: true },
+    toObject: { virtuals: true },
   }
 );
 
-// Indexes
-// Remove duplicate user index and keep only these
 instructorSchema.index({ expertiseAreas: 1 });
 instructorSchema.index({ approvalStatus: 1 });
 
-// Virtual Population (for easy user data access)
 instructorSchema.virtual("profile", {
   ref: "User",
   localField: "user",

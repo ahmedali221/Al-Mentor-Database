@@ -40,6 +40,5 @@ const subtopicSchema = new mongoose.Schema(
 );
 
 subtopicSchema.index({ topic: 1, order: 1 });
-subtopicSchema.index({ slug: 1 });
 
 module.exports = mongoose.model("SubTopic", subtopicSchema);

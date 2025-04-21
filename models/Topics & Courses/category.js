@@ -1,10 +1,10 @@
 const mongoose = require("mongoose");
 
-const topicSchema = new mongoose.Schema(
+const categorySchema = new mongoose.Schema(
   {
     name: {
       type: String,
-      required: [true, "Topic name is required"],
+      required: [true, "Category name is required"],
       unique: true,
       trim: true,
       maxlength: 100,
@@ -24,20 +24,19 @@ const topicSchema = new mongoose.Schema(
       type: String,
       required: true,
     },
-
-    availableLanguages: [
+    topics: [
       {
-        type: String,
-        enum: ["ar", "en", "fr"],
-        required: true,
+        type: mongoose.Schema.Types.ObjectId,
+        ref: "Topic", // Reference to the Topic model
+      },
+    ],
+    subTopics: [
+      {
+        type: mongoose.Schema.Types.ObjectId,
+        ref: "SubTopic", // Reference to the SubTopic model
       },
     ],
     order: {
-      type: Number,
-      default: 0,
-    },
-
-    courseCount: {
       type: Number,
       default: 0,
     },
@@ -47,6 +46,6 @@ const topicSchema = new mongoose.Schema(
   }
 );
 
-topicSchema.index({ order: 1 });
+categorySchema.index({ order: 1 });
 
-module.exports = mongoose.model("Topic", topicSchema);
+module.exports = mongoose.model("Category", categorySchema);

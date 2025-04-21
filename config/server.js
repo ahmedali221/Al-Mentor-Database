@@ -10,6 +10,7 @@ const courseRoutes = require("../routes/Topics & Courses/courseRoutes");
 const lessonRoutes = require("../routes/Topics & Courses/lessonRoutes");
 const moduleRoutes = require("../routes/Topics & Courses/moduleRoutes");
 const topicRoutes = require("../routes/Topics & Courses/topicRoutes");
+const categoryRoutes = require("../routes/Topics & Courses/categoryRoutes");
 const subTopicRoutes = require("../routes/Topics & Courses/subTopicRoutes");
 const favoriteLessonRoutes = require("../routes/Topics & Courses/favoriteLessonRoutes");
 
@@ -44,6 +45,7 @@ connectDB().then(() => {
   app.use("/api/instructors", instructorRoutes);
   app.use("/api/saved-courses", userSavedCourseRoutes);
   app.use("/api/courses", courseRoutes);
+  app.use("/api/category", categoryRoutes);
   app.use("/api/lessons", lessonRoutes);
   app.use("/api/modules", moduleRoutes);
   app.use("/api/topics", topicRoutes);

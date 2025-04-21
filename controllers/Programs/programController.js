@@ -11,7 +11,8 @@ const createProgram = async (req, res) => {
 
 const getAllPrograms = async (req, res) => {
   try {
-    const programs = await Program.find();
+    const programs = await Program.find().populate("instructorDetails");
+
     res.status(200).json(programs);
   } catch (error) {
     res.status(500).json({ message: error.message });
@@ -20,7 +21,10 @@ const getAllPrograms = async (req, res) => {
 
 const getProgramById = async (req, res) => {
   try {
-    const program = await Program.findById(req.params.id);
+    const program = await Program.findById(req.params.id).populate(
+      "instructorDetails"
+    );
+
     if (!program) {
       return res.status(404).json({ message: "Program not found" });
     }

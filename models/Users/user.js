@@ -15,7 +15,7 @@ const userSchema = mongoose.Schema(
     email: {
       type: String,
       required: true,
-      unique: true,  // This creates an index automatically
+      unique: true, // This creates an index automatically
       trim: true,
       lowercase: true,
       validate: {
@@ -37,7 +37,7 @@ const userSchema = mongoose.Schema(
     },
     role: {
       type: String,
-      enum: ["student", "instructor", "admin"],
+      enum: ["student", "instructor"],
       default: "student",
     },
 
@@ -50,7 +50,6 @@ const userSchema = mongoose.Schema(
   }
 );
 
-// Remove duplicate index definition
 userSchema.index({ role: 1 });
 
 userSchema.pre("save", async function (next) {

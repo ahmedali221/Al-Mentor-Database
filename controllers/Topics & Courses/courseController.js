@@ -11,7 +11,7 @@ const createCourse = async (req, res) => {
 
 const getAllCourses = async (req, res) => {
   try {
-    const courses = await Course.find().populate("instructor");
+    const courses = await Course.find().populate("instructorDetails");
     res.status(200).json(courses);
   } catch (error) {
     res.status(500).json({ message: error.message });

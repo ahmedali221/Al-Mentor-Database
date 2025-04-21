@@ -38,7 +38,7 @@ const programSchema = new mongoose.Schema(
     instructors: [
       {
         type: mongoose.Schema.Types.ObjectId,
-        ref: "User",
+        ref: "Instructor",
       },
     ],
     learningOutcomes: [String],
@@ -50,5 +50,11 @@ const programSchema = new mongoose.Schema(
   },
   { timestamps: true }
 );
-
+programSchema.virtual("instructorDetails", {
+  ref: "Instructor",
+  localField: "instructors",
+  foreignField: "_id",
+  justOne: true,
+  options: { select: "user expertiseAreas", populate: { path: "profile" } },
+});
 module.exports = mongoose.model("Program", programSchema);

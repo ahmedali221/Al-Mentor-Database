@@ -100,15 +100,26 @@ const courseSchema = new mongoose.Schema(
   },
   {
     timestamps: true,
+    toJSON: { virtuals: true },
+    toObject: { virtuals: true },
   }
 );
 
-// Keep only these indexes and remove duplicate slug index
+// Indexes
 courseSchema.index({ topic: 1 });
 courseSchema.index({ subtopic: 1 });
 courseSchema.index({ language: 1 });
 courseSchema.index({ level: 1 });
 courseSchema.index({ lastUpdated: -1 });
 courseSchema.index({ enrollmentCount: -1 });
+
+// Virtual for instructor details
+courseSchema.virtual("instructorDetails", {
+  ref: "Instructor",
+  localField: "instructor",
+  foreignField: "_id",
+  justOne: true,
+  options: { select: "user expertiseAreas", populate: { path: "profile" } },
+});
 
 module.exports = mongoose.model("Course", courseSchema);
