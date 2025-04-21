@@ -1,0 +1,139 @@
+{
+  "subtopics": [
+    {
+      "name": {
+        "en": "Frontend Development",
+        "ar": "تطوير الواجهة الأمامية"
+      },
+      "slug": "frontend-development",
+      "topic": "64f1a2b3c4d5e6f7a8b9c0d1",
+      "description": {
+        "en": "Learn HTML, CSS, JavaScript, and modern frontend frameworks to build beautiful and responsive web applications.",
+        "ar": "تعلم HTML و CSS و JavaScript وأطر عمل الواجهة الأمامية الحديثة لبناء تطبيقات ويب جميلة وسريعة الاستجابة."
+      },
+      "thumbnailImgUrl": "https://example.com/frontend-thumbnail.jpg",
+      "order": 1,
+      "isFeatured": true
+    },
+    {
+      "name": {
+        "en": "Backend Development",
+        "ar": "تطوير الواجهة الخلفية"
+      },
+      "slug": "backend-development",
+      "topic": "64f1a2b3c4d5e6f7a8b9c0d1",
+      "description": {
+        "en": "Master server-side programming, databases, APIs, and backend frameworks to build robust web applications.",
+        "ar": "أتقن برمجة جانب الخادم وقواعد البيانات وواجهات برمجة التطبيقات وأطر عمل الواجهة الخلفية لبناء تطبيقات ويب قوية."
+      },
+      "thumbnailImgUrl": "https://example.com/backend-thumbnail.jpg",
+      "order": 2,
+      "isFeatured": true
+    },
+    {
+      "name": {
+        "en": "Mobile Development",
+        "ar": "تطوير تطبيقات الجوال"
+      },
+      "slug": "mobile-development",
+      "topic": "64f1a2b3c4d5e6f7a8b9c0d1",
+      "description": {
+        "en": "Build native and cross-platform mobile applications using React Native, Flutter, and other mobile development frameworks.",
+        "ar": "قم ببناء تطبيقات الجوال الأصلية وعبر المنصات باستخدام React Native و Flutter وأطر عمل تطوير الجوال الأخرى."
+      },
+      "thumbnailImgUrl": "https://example.com/mobile-thumbnail.jpg",
+      "order": 3,
+      "isFeatured": false
+    },
+    {
+      "name": {
+        "en": "Data Science",
+        "ar": "علوم البيانات"
+      },
+      "slug": "data-science",
+      "topic": "64f1a2b3c4d5e6f7a8b9c0d2",
+      "description": {
+        "en": "Learn data analysis, machine learning, and statistical modeling to extract insights from data.",
+        "ar": "تعلم تحليل البيانات والتعلم الآلي والنمذجة الإحصائية لاستخراج الرؤى من البيانات."
+      },
+      "thumbnailImgUrl": "https://example.com/datascience-thumbnail.jpg",
+      "order": 1,
+      "isFeatured": true
+    },
+    {
+      "name": {
+        "en": "Machine Learning",
+        "ar": "التعلم الآلي"
+      },
+      "slug": "machine-learning",
+      "topic": "64f1a2b3c4d5e6f7a8b9c0d2",
+      "description": {
+        "en": "Master machine learning algorithms, deep learning, and AI concepts to build intelligent systems.",
+        "ar": "أتقن خوارزميات التعلم الآلي والتعلم العميق ومفاهيم الذكاء الاصطناعي لبناء أنظمة ذكية."
+      },
+      "thumbnailImgUrl": "https://example.com/ml-thumbnail.jpg",
+      "order": 2,
+      "isFeatured": true
+    },
+    {
+      "name": {
+        "en": "Cloud Computing",
+        "ar": "الحوسبة السحابية"
+      },
+      "slug": "cloud-computing",
+      "topic": "64f1a2b3c4d5e6f7a8b9c0d3",
+      "description": {
+        "en": "Learn cloud platforms like AWS, Azure, and Google Cloud to deploy and scale applications.",
+        "ar": "تعلم منصات السحابة مثل AWS و Azure و Google Cloud لنشر وتوسيع نطاق التطبيقات."
+      },
+      "thumbnailImgUrl": "https://example.com/cloud-thumbnail.jpg",
+      "order": 1,
+      "isFeatured": true
+    },
+    {
+      "name": {
+        "en": "DevOps",
+        "ar": "DevOps"
+      },
+      "slug": "devops",
+      "topic": "64f1a2b3c4d5e6f7a8b9c0d3",
+      "description": {
+        "en": "Master continuous integration, deployment, and infrastructure as code to streamline development workflows.",
+        "ar": "أتقن التكامل المستمر والنشر والبنية التحتية كرمز لتبسيط سير عمل التطوير."
+      },
+      "thumbnailImgUrl": "https://example.com/devops-thumbnail.jpg",
+      "order": 2,
+      "isFeatured": false
+    },
+    {
+      "name": {
+        "en": "Cybersecurity",
+        "ar": "الأمن السيبراني"
+      },
+      "slug": "cybersecurity",
+      "topic": "64f1a2b3c4d5e6f7a8b9c0d4",
+      "description": {
+        "en": "Learn security best practices, ethical hacking, and how to protect systems from cyber threats.",
+        "ar": "تعلم أفضل ممارسات الأمن والاختراق الأخلاقي وكيفية حماية الأنظمة من التهديدات السيبرانية."
+      },
+      "thumbnailImgUrl": "https://example.com/security-thumbnail.jpg",
+      "order": 1,
+      "isFeatured": true
+    },
+    {
+      "name": {
+        "en": "Blockchain",
+        "ar": "البلوكشين"
+      },
+      "slug": "blockchain",
+      "topic": "64f1a2b3c4d5e6f7a8b9c0d5",
+      "description": {
+        "en": "Learn blockchain technology, smart contracts, and decentralized applications development.",
+        "ar": "تعلم تقنية البلوكشين والعقود الذكية وتطوير التطبيقات اللامركزية."
+      },
+      "thumbnailImgUrl": "https://example.com/blockchain-thumbnail.jpg",
+      "order": 1,
+      "isFeatured": true
+    }
+  ]
+}

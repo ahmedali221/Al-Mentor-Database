@@ -2,12 +2,12 @@ const express = require('express');
 const mongoose = require('mongoose');
 const cors = require('cors');
 
-const courseRoutes = require("./Routes/courseRoutes");
-const moduleRoutes = require("./Routes/moduleRoutes");
-const topicRoutes = require("./Routes/topicRoutes");
-const subTopicRoutes = require("./Routes/subTopicRoutes");
-const lessonRoutes = require("./Routes/lessonRoutes");
-const userRoutes = require("./Routes/userRoute");
+const courseRoutes = require("./routes/Topics & Courses/courseRoutes");
+const moduleRoutes = require("./routes/Topics & Courses/moduleRoutes");
+const topicRoutes = require("./routes/Topics & Courses/topicRoutes");
+const subTopicRoutes = require("./routes/Topics & Courses/subTopicRoutes");
+const lessonRoutes = require("./routes/Topics & Courses/lessonRoutes");
+const userRoutes = require("./routes/userRoute");
 const app = express();
 
 app.use(cors());

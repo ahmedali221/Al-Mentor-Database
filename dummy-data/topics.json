@@ -1,0 +1,215 @@
+{
+  "topics" : [
+  {
+    "name": { "en": "Web Development", "ar": "تطوير الويب" },
+    "slug": "web-development",
+    "description": {
+      "en": "Courses related to building websites and web applications.",
+      "ar": "دورات متعلقة ببناء مواقع وتطبيقات الويب."
+    },
+    "thumbnailImgUrl": "https://example.com/images/web-dev.png",
+    "availableLanguages": ["en", "ar"],
+    "order": 1,
+    "courseCount": 2,
+    "courses": [
+      {
+        "title": { "en": "Introduction to Web Development", "ar": "مقدمة في تطوير الويب" },
+        "slug": "introduction-to-web-development"
+      },
+      {
+        "title": { "en": "UI/UX Design Principles", "ar": "مبادئ تصميم واجهة المستخدم وتجربة المستخدم" },
+        "slug": "ui-ux-design-principles"
+      }
+    ]
+  }
+,
+
+  {
+    "name": { "en": "Web Development", "ar": "تطوير الويب" },
+    "slug": "web-development",
+    "description": {
+      "en": "Courses related to building websites and web applications.",
+      "ar": "دورات متعلقة ببناء مواقع وتطبيقات الويب."
+    },
+    "thumbnailImgUrl": "https://example.com/images/web-dev.png",
+    "availableLanguages": ["en", "ar"],
+    "order": 1,
+    "courseCount": 2,
+    "courses": [
+      {
+        "title": { "en": "Introduction to Web Development", "ar": "مقدمة في تطوير الويب" },
+        "slug": "introduction-to-web-development"
+      },
+      {
+        "title": { "en": "UI/UX Design Principles", "ar": "مبادئ تصميم واجهة المستخدم وتجربة المستخدم" },
+        "slug": "ui-ux-design-principles"
+      }
+    ]
+  },
+  {
+    "name": { "en": "Data Science", "ar": "علم البيانات" },
+    "slug": "data-science",
+    "description": {
+      "en": "Explore data analysis, visualization, and machine learning.",
+      "ar": "استكشاف تحليل البيانات، التصور، والتعلم الآلي."
+    },
+    "thumbnailImgUrl": "https://example.com/images/data-science.png",
+    "availableLanguages": ["en", "ar"],
+    "order": 2,
+    "courseCount": 2,
+    "courses": [
+      {
+        "title": { "en": "Data Science Fundamentals", "ar": "أساسيات علم البيانات" },
+        "slug": "data-science-fundamentals"
+      },
+      {
+        "title": { "en": "Machine Learning Fundamentals", "ar": "أساسيات التعلم الآلي" },
+        "slug": "machine-learning-fundamentals"
+      }
+    ]
+  },
+  {
+    "name": { "en": "Programming", "ar": "البرمجة" },
+    "slug": "programming",
+    "description": {
+      "en": "Learn programming languages and advanced coding techniques.",
+      "ar": "تعلم لغات البرمجة وتقنيات البرمجة المتقدمة."
+    },
+    "thumbnailImgUrl": "https://example.com/images/programming.png",
+    "availableLanguages": ["en", "ar"],
+    "order": 3,
+    "courseCount": 1,
+    "courses": [
+      {
+        "title": { "en": "Advanced Python Programming", "ar": "برمجة بايثون المتقدمة" },
+        "slug": "advanced-python-programming"
+      }
+    ]
+  },
+  {
+    "name": { "en": "Mobile Development", "ar": "تطوير تطبيقات الموبايل" },
+    "slug": "mobile-development",
+    "description": {
+      "en": "Build cross-platform apps for iOS and Android.",
+      "ar": "بناء تطبيقات متعددة المنصات لنظامي iOS و Android."
+    },
+    "thumbnailImgUrl": "https://example.com/images/mobile.png",
+    "availableLanguages": ["en", "ar"],
+    "order": 4,
+    "courseCount": 1,
+    "courses": [
+      {
+        "title": { "en": "Mobile App Development with Flutter", "ar": "تطوير تطبيقات الموبايل باستخدام Flutter" },
+        "slug": "flutter-mobile-development"
+      }
+    ]
+  },
+  {
+    "name": { "en": "Cybersecurity", "ar": "الأمن السيبراني" },
+    "slug": "cybersecurity",
+    "description": {
+      "en": "Protect digital systems from threats and vulnerabilities.",
+      "ar": "حماية الأنظمة الرقمية من التهديدات ونقاط الضعف."
+    },
+    "thumbnailImgUrl": "https://example.com/images/cybersecurity.png",
+    "availableLanguages": ["en", "ar"],
+    "order": 5,
+    "courseCount": 1,
+    "courses": [
+      {
+        "title": { "en": "Cybersecurity Essentials", "ar": "أساسيات الأمن السيبراني" },
+        "slug": "cybersecurity-essentials"
+      }
+    ]
+  },
+  {
+    "name": { "en": "Digital Marketing", "ar": "التسويق الرقمي" },
+    "slug": "digital-marketing",
+    "description": {
+      "en": "Master SEO, content marketing, social media, and more.",
+      "ar": "إتقان تحسين محركات البحث، التسويق بالمحتوى، ووسائل التواصل الاجتماعي."
+    },
+    "thumbnailImgUrl": "https://example.com/images/marketing.png",
+    "availableLanguages": ["en", "ar"],
+    "order": 6,
+    "courseCount": 1,
+    "courses": [
+      {
+        "title": { "en": "Digital Marketing Mastery", "ar": "إتقان التسويق الرقمي" },
+        "slug": "digital-marketing-mastery"
+      }
+    ]
+  },
+  {
+    "name": { "en": "Cloud Computing", "ar": "الحوسبة السحابية" },
+    "slug": "cloud-computing",
+    "description": {
+      "en": "Learn to deploy and manage cloud-based applications.",
+      "ar": "تعلم نشر وإدارة التطبيقات السحابية."
+    },
+    "thumbnailImgUrl": "https://example.com/images/cloud.png",
+    "availableLanguages": ["en", "ar"],
+    "order": 7,
+    "courseCount": 1,
+    "courses": [
+      {
+        "title": { "en": "Cloud Computing with AWS", "ar": "الحوسبة السحابية مع AWS" },
+        "slug": "aws-cloud-computing"
+      }
+    ]
+  },
+  {
+    "name": { "en": "Blockchain", "ar": "البلوكشين" },
+    "slug": "blockchain",
+    "description": {
+      "en": "Develop decentralized applications using blockchain technology.",
+      "ar": "تطوير تطبيقات لا مركزية باستخدام تقنية البلوكشين."
+    },
+    "thumbnailImgUrl": "https://example.com/images/blockchain.png",
+    "availableLanguages": ["en", "ar"],
+    "order": 8,
+    "courseCount": 1,
+    "courses": [
+      {
+        "title": { "en": "Blockchain Development", "ar": "تطوير البلوكشين" },
+        "slug": "blockchain-development"
+      }
+    ]
+  },
+  {
+    "name": { "en": "DevOps", "ar": "DevOps" },
+    "slug": "devops",
+    "description": {
+      "en": "Automate development and operations workflows.",
+      "ar": "أتمتة سير العمل بين التطوير والتشغيل."
+    },
+    "thumbnailImgUrl": "https://example.com/images/devops.png",
+    "availableLanguages": ["en", "ar"],
+    "order": 9,
+    "courseCount": 1,
+    "courses": [
+      {
+        "title": { "en": "DevOps Engineering", "ar": "هندسة DevOps" },
+        "slug": "devops-engineering"
+      }
+    ]
+  },
+  {
+    "name": { "en": "UI/UX Design", "ar": "تصميم واجهة وتجربة المستخدم" },
+    "slug": "ui-ux-design",
+    "description": {
+      "en": "Learn how to design intuitive and visually appealing interfaces.",
+      "ar": "تعلم كيفية تصميم واجهات استخدام جذابة وسهلة الاستخدام."
+    },
+    "thumbnailImgUrl": "https://example.com/images/uiux.png",
+    "availableLanguages": ["en", "ar"],
+    "order": 10,
+    "courseCount": 1,
+    "courses": [
+      {
+        "title": { "en": "UI/UX Design Principles", "ar": "مبادئ تصميم واجهة المستخدم وتجربة المستخدم" },
+        "slug": "ui-ux-design-principles"
+      }
+    ]
+  }
+]}

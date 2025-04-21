@@ -3,11 +3,20 @@ const mongoose = require("mongoose");
 const topicSchema = new mongoose.Schema(
   {
     name: {
-      type: String,
-      required: [true, "Topic name is required"],
-      unique: true,
-      trim: true,
-      maxlength: 100,
+      en: {
+        type: String,
+        required: [true, "Topic name is required"],
+        unique: true,
+        trim: true,
+        maxlength: 100,
+      },
+      ar: {
+        type: String,
+        required: [true, "Topic name is required"],
+        unique: true,
+        trim: true,
+        maxlength: 100,
+      }
     },
     slug: {
       type: String,
@@ -16,9 +25,16 @@ const topicSchema = new mongoose.Schema(
       required: true,
     },
     description: {
-      type: String,
-      required: true,
-      maxlength: 500,
+      en: {
+        type: String,
+        required: true,
+        maxlength: 500,
+      },
+      ar: {
+        type: String,
+        required: true,
+        maxlength: 500,
+      }
     },
     thumbnailImgUrl: {
       type: String,
