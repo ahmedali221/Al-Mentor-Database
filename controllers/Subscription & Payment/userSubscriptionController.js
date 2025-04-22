@@ -10,16 +10,21 @@ exports.subscribeUser = async (req, res) => {
       return res.status(404).json({ message: "Subscription not found" });
     }
 
+    const durationInDays =
+      subscription.duration.unit === "months"
+        ? subscription.duration.value * 30
+        : subscription.duration.value;
+
     const startDate = new Date();
     const endDate = new Date();
-    endDate.setDate(startDate.getDate() + subscription.durationInDays);
+    endDate.setDate(startDate.getDate() + durationInDays);
 
     const userSub = await UserSubscription.create({
-      userId,
-      subscriptionId,
+      user: userId,
+      subscription: subscriptionId,
       startDate,
       endDate,
-      isActive: true,
+      status: "active",
     });
 
     res.status(201).json(userSub);
@@ -31,8 +36,8 @@ exports.subscribeUser = async (req, res) => {
 exports.getUserSubscriptions = async (req, res) => {
   try {
     const { userId } = req.params;
-    const subs = await UserSubscription.find({ userId }).populate(
-      "subscriptionId"
+    const subs = await UserSubscription.find({ user: userId }).populate(
+      "subscription"
     );
     res.status(200).json(subs);
   } catch (err) {
@@ -45,10 +50,25 @@ exports.cancelSubscription = async (req, res) => {
     const { id } = req.params;
     const updated = await UserSubscription.findByIdAndUpdate(
       id,
-      { isActive: false },
+      { status: "canceled" },
       { new: true }
     );
     res.status(200).json(updated);
+  } catch (err) {
+    res.status(500).json({ message: err.message });
+  }
+};
+
+exports.deleteUserSubscription = async (req, res) => {
+  try {
+    const { id } = req.params;
+    const deletedSub = await UserSubscription.findByIdAndDelete(id);
+    if (!deletedSub) {
+      return res
+        .status(404)
+        .json({ message: "The specified user subscription does not exist" });
+    }
+    res.status(200).json({ message: "User subscription deleted successfully" });
   } catch (err) {
     res.status(500).json({ message: err.message });
   }

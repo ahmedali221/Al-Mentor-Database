@@ -12,6 +12,14 @@ const userSubscriptionSchema = new mongoose.Schema(
       type: mongoose.Schema.Types.ObjectId,
       ref: "Subscription",
       required: true,
+      validate: {
+        validator: async function (v) {
+          const Subscription = mongoose.model("Subscription");
+          const exists = await Subscription.exists({ _id: v });
+          return !!exists;
+        },
+        message: "Subscription not found",
+      },
     },
     startDate: {
       type: Date,
