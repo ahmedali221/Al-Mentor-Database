@@ -1,114 +1,12 @@
 {
   "modules": [
     {
-      "title": {
-        "en": "Introduction to Web Development",
-        "ar": "مقدمة في تطوير الويب"
-      },
+      "title": { "en": "HTML Fundamentals", "ar": "أساسيات HTML" },
       "course": "64f1a2b3c4d5e6f7a8b9c0d1",
       "order": 1,
       "duration": 120,
       "isPublished": true,
       "completionCriteria": "all-lessons"
-    },
-    {
-      "title": {
-        "en": "HTML Fundamentals",
-        "ar": "أساسيات HTML"
-      },
-      "course": "64f1a2b3c4d5e6f7a8b9c0d1",
-      "order": 2,
-      "duration": 180,
-      "isPublished": true,
-      "completionCriteria": "all-lessons"
-    },
-    {
-      "title": {
-        "en": "CSS Styling",
-        "ar": "تنسيق CSS"
-      },
-      "course": "64f1a2b3c4d5e6f7a8b9c0d1",
-      "order": 3,
-      "duration": 240,
-      "isPublished": true,
-      "completionCriteria": "all-lessons"
-    },
-    {
-      "title": {
-        "en": "JavaScript Basics",
-        "ar": "أساسيات JavaScript"
-      },
-      "course": "64f1a2b3c4d5e6f7a8b9c0d1",
-      "order": 4,
-      "duration": 300,
-      "isPublished": true,
-      "completionCriteria": "all-lessons"
-    },
-    {
-      "title": {
-        "en": "Introduction to Python",
-        "ar": "مقدمة في Python"
-      },
-      "course": "64f1a2b3c4d5e6f7a8b9c0d2",
-      "order": 1,
-      "duration": 180,
-      "isPublished": true,
-      "completionCriteria": "all-lessons"
-    },
-    {
-      "title": {
-        "en": "Data Analysis with Python",
-        "ar": "تحليل البيانات باستخدام Python"
-      },
-      "course": "64f1a2b3c4d5e6f7a8b9c0d2",
-      "order": 2,
-      "duration": 240,
-      "isPublished": true,
-      "completionCriteria": "all-lessons"
-    },
-    {
-      "title": {
-        "en": "Machine Learning Fundamentals",
-        "ar": "أساسيات التعلم الآلي"
-      },
-      "course": "64f1a2b3c4d5e6f7a8b9c0d2",
-      "order": 3,
-      "duration": 360,
-      "isPublished": true,
-      "completionCriteria": "all-lessons"
-    },
-    {
-      "title": {
-        "en": "Introduction to React Native",
-        "ar": "مقدمة في React Native"
-      },
-      "course": "64f1a2b3c4d5e6f7a8b9c0d3",
-      "order": 1,
-      "duration": 180,
-      "isPublished": true,
-      "completionCriteria": "all-lessons"
-    },
-    {
-      "title": {
-        "en": "Building Mobile Apps",
-        "ar": "بناء تطبيقات الجوال"
-      },
-      "course": "64f1a2b3c4d5e6f7a8b9c0d3",
-      "order": 2,
-      "duration": 300,
-      "isPublished": true,
-      "completionCriteria": "all-lessons"
-    },
-    {
-      "title": {
-        "en": "Advanced React Native Features",
-        "ar": "ميزات React Native المتقدمة"
-      },
-      "course": "64f1a2b3c4d5e6f7a8b9c0d3",
-      "order": 3,
-      "duration": 240,
-      "isPublished": true,
-      "completionCriteria": "all-lessons"
     }
   ]
-} 
+}

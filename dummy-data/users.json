@@ -1,0 +1,20 @@
+{
+  "users": [
+    {
+      "username": "ahmed123",
+      "email": "ahmed@example.com",
+      "password": "$2a$12$examplehash", 
+      "firstName": "Ahmed",
+      "lastName": "Ali",
+      "profilePicture": "https://example.com/profiles/ahmed.jpg"
+    },
+    {
+      "username": "sara456",
+      "email": "sara@example.com",
+      "password": "$2a$12$examplehash2",
+      "firstName": "Sara",
+      "lastName": "Hassan",
+      "profilePicture": "https://example.com/profiles/sara.jpg"
+    }
+  ]
+}

@@ -1,0 +1,87 @@
+{
+  "programs": [
+    {
+      "title": {
+        "en": "Full Stack Web Development",
+        "ar": "تطوير الويب الكامل"
+      },
+      "slug": {
+        "en": "full-stack-web-development",
+        "ar": "تطوير-الويب-الكامل"
+      },
+      "description": {
+        "en": "Become a full stack web developer by mastering both frontend and backend technologies.",
+        "ar": "كن مطور ويب كامل من خلال إتقان تقنيات الواجهة الأمامية والخلفية."
+      },
+      "thumbnail": "https://example.com/thumbnails/fullstack.png",
+      "level": {
+        "en": "beginner",
+        "ar": "مبتدئ"
+      },
+      "language": {
+        "en": "English",
+        "ar": "الإنجليزية"
+      },
+      "totalDuration": 120,
+      "courses": [
+        "64f1a2b3c4d5e6f7a8b9c0d1",
+        "64f1a2b3c4d5e6f7a8b9c0d2"
+      ],
+      "learningOutcomes": [
+        {
+          "en": "Build responsive websites using HTML, CSS, and JavaScript.",
+          "ar": "بناء مواقع متجاوبة باستخدام HTML وCSS وJavaScript."
+        },
+        {
+          "en": "Develop RESTful APIs with Node.js.",
+          "ar": "تطوير واجهات برمجة التطبيقات REST باستخدام Node.js."
+        }
+      ],
+      "category": {
+        "en": "development",
+        "ar": "تطوير"
+      }
+    },
+    {
+      "title": {
+        "en": "Business Communication Skills",
+        "ar": "مهارات التواصل في الأعمال"
+      },
+      "slug": {
+        "en": "business-communication-skills",
+        "ar": "مهارات-التواصل-في-الأعمال"
+      },
+      "description": {
+        "en": "Enhance your business communication skills for professional success.",
+        "ar": "عزز مهارات التواصل في الأعمال لتحقيق النجاح المهني."
+      },
+      "thumbnail": "https://example.com/thumbnails/business-comm.png",
+      "level": {
+        "en": "intermediate",
+        "ar": "متوسط"
+      },
+      "language": {
+        "en": "English",
+        "ar": "الإنجليزية"
+      },
+      "totalDuration": 60,
+      "courses": [
+        "64f1a2b3c4d5e6f7a8b9c0d3"
+      ],
+      "learningOutcomes": [
+        {
+          "en": "Communicate effectively in business settings.",
+          "ar": "التواصل بفعالية في بيئات الأعمال."
+        },
+        {
+          "en": "Write professional emails and reports.",
+          "ar": "كتابة رسائل وتقارير مهنية."
+        }
+      ],
+      "category": {
+        "en": "business",
+        "ar": "أعمال"
+      }
+    }
+  ]
+}

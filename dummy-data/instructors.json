@@ -1,0 +1,25 @@
+{
+  "instructors": [
+    {
+      "user": "64f1a2b3c4d5e6f7a8b9c0a1",
+      "professionalTitle": {
+        "en": "Senior Web Developer",
+        "ar": "مطور ويب أول"
+      },
+      "expertiseAreas": {
+        "en": ["Web Development", "JavaScript"],
+        "ar": ["تطوير الويب", "جافاسكريبت"]
+      },
+      "biography": {
+        "en": "Ahmed has over 10 years of experience in web development.",
+        "ar": "أحمد لديه أكثر من 10 سنوات خبرة في تطوير الويب."
+      },
+      "socialMediaLinks": {
+        "linkedin": "https://linkedin.com/in/ahmed",
+        "twitter": "https://twitter.com/ahmed"
+      },
+      "yearsOfExperience": 10,
+      "approvalStatus": "approved"
+    }
+  ]
+}
