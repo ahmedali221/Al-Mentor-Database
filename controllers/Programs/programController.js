@@ -11,8 +11,9 @@ const createProgram = async (req, res) => {
 
 const getAllPrograms = async (req, res) => {
   try {
-    const programs = await Program.find().populate("instructorDetails");
-
+    const programs = await Program.find().populate({
+      path: "courseDetails",
+    });
     res.status(200).json(programs);
   } catch (error) {
     res.status(500).json({ message: error.message });
@@ -21,9 +22,11 @@ const getAllPrograms = async (req, res) => {
 
 const getProgramById = async (req, res) => {
   try {
-    const program = await Program.findById(req.params.id).populate(
-      "instructorDetails"
-    );
+    const program = await Program.findById(req.params.id).populate({
+      path: "courseDetails",
+      // This is like second Population
+      // After Showing the instructor data we populate the user field and get its data from the ref id
+    });
 
     if (!program) {
       return res.status(404).json({ message: "Program not found" });

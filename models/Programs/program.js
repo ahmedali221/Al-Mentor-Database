@@ -30,15 +30,14 @@ const programSchema = new mongoose.Schema(
       type: String,
       default: "ar",
     },
-
     totalDuration: {
       type: Number,
       default: 0,
     },
-    instructors: [
+    courses: [
       {
         type: mongoose.Schema.Types.ObjectId,
-        ref: "Instructor",
+        ref: "Course",
       },
     ],
     learningOutcomes: [String],
@@ -48,13 +47,20 @@ const programSchema = new mongoose.Schema(
       index: true,
     },
   },
-  { timestamps: true }
+  {
+    timestamps: true,
+    toJSON: { virtuals: true }, // Ensure virtuals are included in JSON output
+    toObject: { virtuals: true }, // Ensure virtuals are included when converting to objects
+  }
 );
-programSchema.virtual("instructorDetails", {
-  ref: "Instructor",
-  localField: "instructors",
+
+// Virtual to populate full course details
+// This will show the data of the courses
+programSchema.virtual("courseDetails", {
+  ref: "Course",
+  localField: "courses",
   foreignField: "_id",
-  justOne: true,
-  options: { select: "user expertiseAreas", populate: { path: "profile" } },
+  justOne: false,
 });
+
 module.exports = mongoose.model("Program", programSchema);
