@@ -3,10 +3,18 @@ const mongoose = require("mongoose");
 const lessonSchema = new mongoose.Schema(
   {
     title: {
-      type: String,
-      required: true,
-      trim: true,
-      maxlength: 100,
+      en: {
+        type: String,
+        required: true,
+        trim: true,
+        maxlength: 100,
+      },
+      ar: {
+        type: String,
+        required: true,
+        trim: true,
+        maxlength: 100,
+      }
     },
     module: {
       type: mongoose.Schema.Types.ObjectId,
@@ -14,9 +22,16 @@ const lessonSchema = new mongoose.Schema(
       required: true,
     },
     description: {
-      type: String,
-      trim: true,
-      maxlength: 500,
+      en: {
+        type: String,
+        trim: true,
+        maxlength: 500,
+      },
+      ar: {
+        type: String,
+        trim: true,
+        maxlength: 500,
+      }
     },
     order: {
       type: Number,
@@ -29,10 +44,16 @@ const lessonSchema = new mongoose.Schema(
     },
     content: {
       videoUrl: String,
-      articleText: String,
+      articleText: {
+        en: String,
+        ar: String
+      },
       attachments: [
         {
-          name: String,
+          name: {
+            en: String,
+            ar: String
+          },
           url: String,
           type: { type: String, enum: ["pdf", "slide", "audio"] },
         },
@@ -54,3 +75,5 @@ const lessonSchema = new mongoose.Schema(
 
 lessonSchema.index({ module: 1, order: 1 });
 lessonSchema.index({ isPublished: 1 });
+
+module.exports = mongoose.model("Lesson", lessonSchema);

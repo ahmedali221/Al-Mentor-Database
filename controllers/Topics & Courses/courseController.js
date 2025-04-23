@@ -59,6 +59,18 @@ const deleteCourse = async (req, res) => {
     res.status(500).json({ message: error.message });
   }
 };
+const getCoursesByInstructor = async (req, res) => {
+  try {
+    const { instructorId } = req.params;
+
+    const courses = await Course.find({ instructor: instructorId }).populate("instructor");
+
+    res.status(200).json(courses);
+  } catch (error) {
+    res.status(500).json({ message: error.message });
+  }
+};
+
 
 module.exports = {
   createCourse,
@@ -66,4 +78,5 @@ module.exports = {
   getCourseById,
   updateCourse,
   deleteCourse,
+  getCoursesByInstructor,
 };

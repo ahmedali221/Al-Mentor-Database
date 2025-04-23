@@ -1,0 +1,264 @@
+{
+  "courses": [
+    {
+      "title": {
+        "en": "Introduction to Web Development",
+        "ar": "مقدمة في تطوير الويب"
+      },
+      "slug": "introduction-to-web-development",
+      "topic": "64f1a2b3c4d5e6f7a8b9c0d1",
+      "instructor": "64f1a2b3c4d5e6f7a8b9c0d2",
+      "description": {
+        "en": "Learn the fundamentals of web development including HTML, CSS, and JavaScript. Perfect for beginners who want to start their journey in web development.",
+        "ar": "تعلم أساسيات تطوير الويب بما في ذلك HTML و CSS و JavaScript. مثالي للمبتدئين الذين يريدون بدء رحلتهم في تطوير الويب."
+      },
+      "shortDescription": {
+        "en": "Start your web development journey with this comprehensive course",
+        "ar": "ابدأ رحلتك في تطوير الويب مع هذه الدورة الشاملة"
+      },
+      "level": "beginner",
+      "language": "en",
+      "duration": 30,
+      "isFree": true,
+      "enrollmentCount": 0,
+      "rating": {
+        "average": 0,
+        "count": 0
+      }
+    },
+    {
+      "title": {
+        "en": "Advanced JavaScript Programming",
+        "ar": "البرمجة المتقدمة في JavaScript"
+      },
+      "slug": "advanced-javascript-programming",
+      "topic": "64f1a2b3c4d5e6f7a8b9c0d3",
+      "instructor": "64f1a2b3c4d5e6f7a8b9c0d4",
+      "description": {
+        "en": "Master advanced JavaScript concepts including closures, promises, async/await, and design patterns. Take your JavaScript skills to the next level.",
+        "ar": "إتقان مفاهيم JavaScript المتقدمة بما في ذلك الإغلاقات والوعود و async/await وأنماط التصميم. ارتقِ بمهارات JavaScript الخاصة بك إلى المستوى التالي."
+      },
+      "shortDescription": {
+        "en": "Deep dive into advanced JavaScript concepts",
+        "ar": "تعمق في مفاهيم JavaScript المتقدمة"
+      },
+      "level": "advanced",
+      "language": "en",
+      "duration": 45,
+      "isFree": false,
+      "enrollmentCount": 0,
+      "rating": {
+        "average": 0,
+        "count": 0
+      }
+    },
+    {
+      "title": {
+        "en": "Python for Data Science",
+        "ar": "بايثون لعلوم البيانات"
+      },
+      "slug": "python-for-data-science",
+      "topic": "64f1a2b3c4d5e6f7a8b9c0d5",
+      "instructor": "64f1a2b3c4d5e6f7a8b9c0d6",
+      "description": {
+        "en": "Learn how to use Python for data analysis, visualization, and machine learning. Perfect for aspiring data scientists.",
+        "ar": "تعلم كيفية استخدام Python لتحليل البيانات والتصور والتعلم الآلي. مثالي لعلماء البيانات الطموحين."
+      },
+      "shortDescription": {
+        "en": "Master data science with Python",
+        "ar": "أتقن علوم البيانات باستخدام Python"
+      },
+      "level": "intermediate",
+      "language": "en",
+      "duration": 60,
+      "isFree": false,
+      "enrollmentCount": 0,
+      "rating": {
+        "average": 0,
+        "count": 0
+      }
+    },
+    {
+      "title": {
+        "en": "Mobile App Development with React Native",
+        "ar": "تطوير تطبيقات الجوال باستخدام React Native"
+      },
+      "slug": "react-native-mobile-development",
+      "topic": "64f1a2b3c4d5e6f7a8b9c0d7",
+      "instructor": "64f1a2b3c4d5e6f7a8b9c0d8",
+      "description": {
+        "en": "Build cross-platform mobile applications using React Native. Learn to create beautiful and performant mobile apps.",
+        "ar": "قم ببناء تطبيقات الجوال عبر المنصات باستخدام React Native. تعلم إنشاء تطبيقات جوال جميلة وفعالة."
+      },
+      "shortDescription": {
+        "en": "Create mobile apps for both iOS and Android",
+        "ar": "أنشئ تطبيقات جوال لكل من iOS و Android"
+      },
+      "level": "intermediate",
+      "language": "en",
+      "duration": 50,
+      "isFree": false,
+      "enrollmentCount": 0,
+      "rating": {
+        "average": 0,
+        "count": 0
+      }
+    },
+    {
+      "title": {
+        "en": "UI/UX Design Fundamentals",
+        "ar": "أساسيات تصميم واجهة المستخدم وتجربة المستخدم"
+      },
+      "slug": "ui-ux-design-fundamentals",
+      "topic": "64f1a2b3c4d5e6f7a8b9c0d9",
+      "instructor": "64f1a2b3c4d5e6f7a8b9c0da",
+      "description": {
+        "en": "Learn the principles of UI/UX design, create wireframes, and design beautiful user interfaces that provide great user experience.",
+        "ar": "تعلم مبادئ تصميم واجهة المستخدم وتجربة المستخدم، وإنشاء الإطارات السلكية، وتصميم واجهات مستخدم جميلة توفر تجربة مستخدم رائعة."
+      },
+      "shortDescription": {
+        "en": "Master the art of UI/UX design",
+        "ar": "أتقن فن تصميم واجهة المستخدم وتجربة المستخدم"
+      },
+      "level": "beginner",
+      "language": "en",
+      "duration": 40,
+      "isFree": true,
+      "enrollmentCount": 0,
+      "rating": {
+        "average": 0,
+        "count": 0
+      }
+    },
+    {
+      "title": {
+        "en": "Cloud Computing with AWS",
+        "ar": "الحوسبة السحابية مع AWS"
+      },
+      "slug": "cloud-computing-aws",
+      "topic": "64f1a2b3c4d5e6f7a8b9c0db",
+      "instructor": "64f1a2b3c4d5e6f7a8b9c0dc",
+      "description": {
+        "en": "Learn how to deploy and manage applications on Amazon Web Services. Master cloud computing concepts and best practices.",
+        "ar": "تعلم كيفية نشر وإدارة التطبيقات على Amazon Web Services. إتقان مفاهيم الحوسبة السحابية وأفضل الممارسات."
+      },
+      "shortDescription": {
+        "en": "Become an AWS cloud expert",
+        "ar": "كن خبيرًا في سحابة AWS"
+      },
+      "level": "advanced",
+      "language": "en",
+      "duration": 55,
+      "isFree": false,
+      "enrollmentCount": 0,
+      "rating": {
+        "average": 0,
+        "count": 0
+      }
+    },
+    {
+      "title": {
+        "en": "Cybersecurity Fundamentals",
+        "ar": "أساسيات الأمن السيبراني"
+      },
+      "slug": "cybersecurity-fundamentals",
+      "topic": "64f1a2b3c4d5e6f7a8b9c0dd",
+      "instructor": "64f1a2b3c4d5e6f7a8b9c0de",
+      "description": {
+        "en": "Learn the basics of cybersecurity, including network security, encryption, and best practices for protecting digital assets.",
+        "ar": "تعلم أساسيات الأمن السيبراني، بما في ذلك أمن الشبكات والتشفير وأفضل الممارسات لحماية الأصول الرقمية."
+      },
+      "shortDescription": {
+        "en": "Protect your digital assets",
+        "ar": "احمِ أصولك الرقمية"
+      },
+      "level": "intermediate",
+      "language": "en",
+      "duration": 35,
+      "isFree": false,
+      "enrollmentCount": 0,
+      "rating": {
+        "average": 0,
+        "count": 0
+      }
+    },
+    {
+      "title": {
+        "en": "Machine Learning Basics",
+        "ar": "أساسيات التعلم الآلي"
+      },
+      "slug": "machine-learning-basics",
+      "topic": "64f1a2b3c4d5e6f7a8b9c0df",
+      "instructor": "64f1a2b3c4d5e6f7a8b9c0e0",
+      "description": {
+        "en": "Introduction to machine learning concepts, algorithms, and practical applications. Perfect for beginners in AI.",
+        "ar": "مقدمة في مفاهيم التعلم الآلي والخوارزميات والتطبيقات العملية. مثالي للمبتدئين في الذكاء الاصطناعي."
+      },
+      "shortDescription": {
+        "en": "Start your AI journey",
+        "ar": "ابدأ رحلتك في الذكاء الاصطناعي"
+      },
+      "level": "intermediate",
+      "language": "en",
+      "duration": 45,
+      "isFree": true,
+      "enrollmentCount": 0,
+      "rating": {
+        "average": 0,
+        "count": 0
+      }
+    },
+    {
+      "title": {
+        "en": "DevOps Engineering",
+        "ar": "هندسة DevOps"
+      },
+      "slug": "devops-engineering",
+      "topic": "64f1a2b3c4d5e6f7a8b9c0e1",
+      "instructor": "64f1a2b3c4d5e6f7a8b9c0e2",
+      "description": {
+        "en": "Learn DevOps practices, tools, and methodologies to streamline software development and deployment processes.",
+        "ar": "تعلم ممارسات وأدوات ومنهجيات DevOps لتبسيط عمليات تطوير البرمجيات والنشر."
+      },
+      "shortDescription": {
+        "en": "Master modern software development practices",
+        "ar": "أتقن ممارسات تطوير البرمجيات الحديثة"
+      },
+      "level": "advanced",
+      "language": "en",
+      "duration": 60,
+      "isFree": false,
+      "enrollmentCount": 0,
+      "rating": {
+        "average": 0,
+        "count": 0
+      }
+    },
+    {
+      "title": {
+        "en": "Blockchain Development",
+        "ar": "تطوير البلوكشين"
+      },
+      "slug": "blockchain-development",
+      "topic": "64f1a2b3c4d5e6f7a8b9c0e3",
+      "instructor": "64f1a2b3c4d5e6f7a8b9c0e4",
+      "description": {
+        "en": "Learn how to build decentralized applications using blockchain technology. Understand smart contracts and DApps development.",
+        "ar": "تعلم كيفية بناء التطبيقات اللامركزية باستخدام تقنية البلوكشين. فهم العقود الذكية وتطوير DApps."
+      },
+      "shortDescription": {
+        "en": "Build the future of decentralized applications",
+        "ar": "ابنِ مستقبل التطبيقات اللامركزية"
+      },
+      "level": "advanced",
+      "language": "en",
+      "duration": 50,
+      "isFree": false,
+      "enrollmentCount": 0,
+      "rating": {
+        "average": 0,
+        "count": 0
+      }
+    }
+  ]
+}

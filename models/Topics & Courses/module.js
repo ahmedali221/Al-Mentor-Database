@@ -3,10 +3,18 @@ const mongoose = require("mongoose");
 const moduleSchema = mongoose.Schema(
   {
     title: {
-      type: String,
-      required: true,
-      trim: true,
-      maxlength: 100,
+      en: {
+        type: String,
+        required: true,
+        trim: true,
+        maxlength: 100,
+      },
+      ar: {
+        type: String,
+        required: true,
+        trim: true,
+        maxlength: 100,
+      }
     },
     course: {
       type: mongoose.Schema.Types.ObjectId,
@@ -64,3 +72,6 @@ moduleSchema.pre("remove", async function (next) {
 
 moduleSchema.index({ course: 1, order: 1 });
 moduleSchema.index({ isPublished: 1 });
+
+const Module = mongoose.model("Module", moduleSchema);
+module.exports = Module;

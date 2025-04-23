@@ -3,10 +3,18 @@ const courseSchema = new mongoose.Schema(
   {
     // Core Fields
     title: {
-      type: String,
-      required: true,
-      trim: true,
-      maxlength: 120,
+      en: {
+        type: String,
+        required: true,
+        trim: true,
+        maxlength: 120,
+      },
+      ar: {
+        type: String,
+        required: true,
+        trim: true,
+        maxlength: 120,
+      }
     },
     slug: {
       type: String,
@@ -31,13 +39,26 @@ const courseSchema = new mongoose.Schema(
 
     // Content
     description: {
-      type: String,
-      required: true,
-      maxlength: 2000,
+      en: {
+        type: String,
+        required: true,
+        maxlength: 2000,
+      },
+      ar: {
+        type: String,
+        required: true,
+        maxlength: 2000,
+      }
     },
     shortDescription: {
-      type: String,
-      maxlength: 200,
+      en: {
+        type: String,
+        maxlength: 200,
+      },
+      ar: {
+        type: String,
+        maxlength: 200,
+      }
     },
     modules: [
       {
