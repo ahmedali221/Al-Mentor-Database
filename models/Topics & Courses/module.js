@@ -44,6 +44,18 @@ const moduleSchema = mongoose.Schema(
       enum: ["all-lessons", "quiz-pass", "none"],
       default: "all-lessons",
     },
+    level: {
+      en: {
+        type: String,
+        enum: ["beginner", "intermediate", "advanced"],
+        required: true,
+      },
+      ar: {
+        type: String,
+        enum: ["مبتدئ", "متوسط", "متقدم"],
+        required: true,
+      }
+    },
   },
   {
     timestamps: true,

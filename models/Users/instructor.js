@@ -10,23 +10,48 @@ const instructorSchema = mongoose.Schema(
       immutable: true,
     },
     professionalTitle: {
-      type: String,
-      required: true,
-      maxlength: 100,
+      en: {
+        type: String,
+        required: true,
+        maxlength: 100,
+      },
+      ar: {
+        type: String,
+        required: true,
+        maxlength: 100,
+      },
     },
     expertiseAreas: {
-      type: [String],
-      required: true,
-      validate: {
-        validator: (v) => v.length > 0 && v.length <= 10,
-        message: "Provide 1-10 expertise areas",
+      en: {
+        type: [String],
+        required: true,
+        validate: {
+          validator: (v) => v.length > 0 && v.length <= 10,
+          message: "Provide 1-10 expertise areas",
+        },
+      },
+      ar: {
+        type: [String],
+        required: true,
+        validate: {
+          validator: (v) => v.length > 0 && v.length <= 10,
+          message: "يجب توفير من 1 إلى 10 مجالات خبرة",
+        },
       },
     },
     biography: {
-      type: String,
-      required: true,
-      minlength: 50,
-      maxlength: 2000,
+      en: {
+        type: String,
+        required: true,
+        minlength: 50,
+        maxlength: 2000,
+      },
+      ar: {
+        type: String,
+        required: true,
+        minlength: 50,
+        maxlength: 2000,
+      },
     },
     socialMediaLinks: {
       type: Map,

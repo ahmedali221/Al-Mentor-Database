@@ -16,13 +16,21 @@ const topicSchema = new mongoose.Schema(
         unique: true,
         trim: true,
         maxlength: 100,
-      }
+      },
     },
     slug: {
-      type: String,
-      unique: true,
-      lowercase: true,
-      required: true,
+      en: {
+        type: String,
+        unique: true,
+        lowercase: true,
+        required: true,
+      },
+      ar: {
+        type: String,
+        unique: true,
+        lowercase: true,
+        required: true,
+      },
     },
     description: {
       en: {
@@ -34,7 +42,7 @@ const topicSchema = new mongoose.Schema(
         type: String,
         required: true,
         maxlength: 500,
-      }
+      },
     },
     thumbnailImgUrl: {
       type: String,

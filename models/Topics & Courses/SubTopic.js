@@ -5,13 +5,13 @@ const subtopicSchema = new mongoose.Schema(
     name: {
       en: {
         type: String,
-        required: [true, "SubTopic name is required"],
+        required: [true, "SubTopic name (English) is required"],
         trim: true,
         maxlength: 100,
       },
       ar: {
         type: String,
-        required: [true, "SubTopic name is required"],
+        required: [true, "SubTopic name (Arabic) is required"],
         trim: true,
         maxlength: 100,
       }

@@ -3,31 +3,60 @@ const mongoose = require("mongoose");
 const programSchema = new mongoose.Schema(
   {
     title: {
-      type: String,
-      required: [true, "Program title is required"],
-      trim: true,
+      en: {
+        type: String,
+        required: [true, "Program title (English) is required"],
+        trim: true,
+      },
+      ar: {
+        type: String,
+        required: [true, "Program title (Arabic) is required"],
+        trim: true,
+      },
     },
     slug: {
-      type: String,
-      unique: true,
-      lowercase: true,
-      required: true,
+      en: {
+        type: String,
+        unique: true,
+        lowercase: true,
+        required: true,
+      },
+      ar: {
+        type: String,
+        unique: true,
+        lowercase: true,
+        required: true,
+      },
     },
     description: {
-      type: String,
-      required: true,
+      en: {
+        type: String,
+        required: [true, "Program description (English) is required"],
+      },
+      ar: {
+        type: String,
+        required: [true, "Program description (Arabic) is required"],
+      },
     },
     thumbnail: {
       type: String,
       required: true,
     },
     level: {
-      type: String,
-      enum: ["beginner", "intermediate", "advanced"],
-      required: true,
+      en: {
+        type: String,
+        enum: ["beginner", "intermediate", "advanced"],
+        required: true,
+      },
+      ar: {
+        type: String,
+        enum: ["مبتدئ", "متوسط", "متقدم"],
+        required: true,
+      },
     },
     language: {
       type: String,
+      enum: ["ar", "en"],
       default: "ar",
     },
     totalDuration: {
@@ -40,22 +69,33 @@ const programSchema = new mongoose.Schema(
         ref: "Course",
       },
     ],
-    learningOutcomes: [String],
+    learningOutcomes: [
+      {
+        en: { type: String, required: true },
+        ar: { type: String, required: true },
+      },
+    ],
     category: {
-      type: String,
-      enum: ["language", "business", "development"],
-      index: true,
+      en: {
+        type: String,
+        enum: ["language", "business", "development"],
+        required: true,
+      },
+      ar: {
+        type: String,
+        enum: ["لغة", "أعمال", "تطوير"],
+        required: true,
+      },
     },
   },
   {
     timestamps: true,
-    toJSON: { virtuals: true }, // Ensure virtuals are included in JSON output
-    toObject: { virtuals: true }, // Ensure virtuals are included when converting to objects
+    toJSON: { virtuals: true },
+    toObject: { virtuals: true },
   }
 );
 
 // Virtual to populate full course details
-// This will show the data of the courses
 programSchema.virtual("courseDetails", {
   ref: "Course",
   localField: "courses",

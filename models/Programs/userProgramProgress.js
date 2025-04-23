@@ -25,9 +25,18 @@ const userProgramProgressSchema = new mongoose.Schema(
       max: 100,
     },
     status: {
-      type: String,
-      enum: ["not_started", "in_progress", "completed"],
-      default: "not_started",
+      en: {
+        type: String,
+        enum: ["not_started", "in_progress", "completed"],
+        default: "not_started",
+        required: true,
+      },
+      ar: {
+        type: String,
+        enum: ["لم يبدأ", "قيد التقدم", "مكتمل"],
+        default: "لم يبدأ",
+        required: true,
+      },
     },
     startDate: {
       type: Date,

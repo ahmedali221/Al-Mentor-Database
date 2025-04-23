@@ -28,9 +28,18 @@ const paymentSchema = new mongoose.Schema(
       required: true,
     },
     status: {
-      type: String,
-      enum: ["pending", "completed", "failed"],
-      default: "pending",
+      en: {
+        type: String,
+        enum: ["pending", "completed", "failed"],
+        default: "pending",
+        required: true,
+      },
+      ar: {
+        type: String,
+        enum: ["قيد الانتظار", "مكتمل", "فشل"], // Arabic equivalents
+        default: "قيد الانتظار",
+        required: true,
+      }
     },
     paymentMethod: {
       type: String,

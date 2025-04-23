@@ -36,8 +36,14 @@ const userSchema = mongoose.Schema(
       select: false,
     },
 
-    firstName: String,
-    lastName: String,
+    firstName: {
+      en: String,
+      ar: String,
+    },
+    lastName: {
+      en: String,
+      ar: String,
+    },
     profilePicture: String,
   },
   {

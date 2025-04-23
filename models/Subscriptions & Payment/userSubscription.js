@@ -36,9 +36,18 @@ const userSubscriptionSchema = new mongoose.Schema(
       },
     },
     status: {
-      type: String,
-      enum: ["active", "expired", "canceled"],
-      default: "active",
+      en: {
+        type: String,
+        enum: ["active", "expired", "canceled"],
+        default: "active",
+        required: true,
+      },
+      ar: {
+        type: String,
+        enum: ["نشط", "منتهي", "ملغي"],
+        default: "نشط",
+        required: true,
+      },
     },
 
     notifications: {

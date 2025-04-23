@@ -17,10 +17,18 @@ const courseSchema = new mongoose.Schema(
       }
     },
     slug: {
-      type: String,
-      unique: true,
-      lowercase: true,
-      required: true,
+      en: {
+        type: String,
+        unique: true,
+        lowercase: true,
+        required: true,
+      },
+      ar: {
+        type: String,
+        unique: true,
+        lowercase: true,
+        required: true,
+      }
     },
     topic: {
       type: mongoose.Schema.Types.ObjectId,
@@ -79,14 +87,32 @@ const courseSchema = new mongoose.Schema(
 
     // Filtering/Sorting
     level: {
-      type: String,
-      enum: ["beginner", "intermediate", "advanced"],
-      default: "beginner",
+      en: {
+        type: String,
+        enum: ["beginner", "intermediate", "advanced"],
+        default: "beginner",
+        required: true,
+      },
+      ar: {
+        type: String,
+        enum: ["مبتدئ", "متوسط", "متقدم"],
+        default: "مبتدئ",
+        required: true,
+      }
     },
     language: {
-      type: String,
-      enum: ["ar", "en", "fr"],
-      default: "ar",
+      en: {
+        type: String,
+        enum: ["English", "Arabic", "French"],
+        default: "Arabic",
+        required: true,
+      },
+      ar: {
+        type: String,
+        enum: ["الإنجليزية", "العربية", "الفرنسية"],
+        default: "العربية",
+        required: true,
+      }
     },
     duration: {
       type: Number,
