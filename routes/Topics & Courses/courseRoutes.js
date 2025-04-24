@@ -6,7 +6,8 @@ const {
   getCourseById,
   updateCourse,
   deleteCourse,
-} = require("../controllers/Topics & Courses/courseController");
+  getCoursesByInstructor,
+} = require("../../controllers/Topics & Courses/courseController");
 
 router.post("/", createCourse);
 router.get("/", getAllCourses);

@@ -62,27 +62,83 @@ const deleteTopic = async (req, res) => {
 const getCoursesByTopic = async (req, res) => {
   try {
     const { id } = req.params;
-    
+
     // First verify the topic exists
     const topic = await Topic.findById(id);
     if (!topic) {
       return res.status(404).json({ message: "Topic not found" });
     }
-    
+
     // Get all courses for this topic
     const courses = await Course.find({ topic: id })
       .populate("instructor", "name email role")
       .populate("topic", "name")
       .populate("subTopic", "name");
-    
+
     res.status(200).json({
       topic: {
         id: topic._id,
         name: topic.name,
-        description: topic.description
+        description: topic.description,
       },
       count: courses.length,
-      courses
+      courses,
+    });
+  } catch (error) {
+    res.status(500).json({ message: error.message });
+  }
+};
+
+// Get Topics by Course
+const getTopicsByCourse = async (req, res) => {
+  try {
+    const { id } = req.params;
+
+    // Verify the course exists
+    const course = await Course.findById(id);
+    if (!course) {
+      return res.status(404).json({ message: "Course not found" });
+    }
+
+    // Get all topics associated with this course
+    const topics = await Topic.find({ course: id });
+
+    res.status(200).json({
+      course: {
+        id: course._id,
+        name: course.name,
+        description: course.description,
+      },
+      count: topics.length,
+      topics,
+    });
+  } catch (error) {
+    res.status(500).json({ message: error.message });
+  }
+};
+
+// Get Topics by Lesson
+const getTopicsByLesson = async (req, res) => {
+  try {
+    const { id } = req.params;
+
+    // Verify the lesson exists
+    const lesson = await Lesson.findById(id);
+    if (!lesson) {
+      return res.status(404).json({ message: "Lesson not found" });
+    }
+
+    // Get all topics associated with this lesson
+    const topics = await Topic.find({ lesson: id });
+
+    res.status(200).json({
+      lesson: {
+        id: lesson._id,
+        name: lesson.name,
+        description: lesson.description,
+      },
+      count: topics.length,
+      topics,
     });
   } catch (error) {
     res.status(500).json({ message: error.message });
@@ -95,5 +151,7 @@ module.exports = {
   getTopicById,
   updateTopic,
   deleteTopic,
-  getCoursesByTopic
+  getCoursesByTopic,
+  getTopicsByCourse,
+  getTopicsByLesson,
 };
