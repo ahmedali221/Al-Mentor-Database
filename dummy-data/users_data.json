@@ -1,0 +1,123 @@
+[
+  {
+    "_id": "6807fc9c2e25711cc59d5313",
+    "username": "matthew99",
+    "email": "matthew99@example.com",
+    "role": "student",
+    "firstName": "Matthew",
+    "lastName": "Stone",
+    "createdAt": "2025-04-22T20:31:24.106Z",
+    "updatedAt": "2025-04-22T20:31:24.106Z",
+    "__v": 0
+  },
+  {
+    "_id": "6807fc9c2e25711cc59d5314",
+    "username": "linda22",
+    "email": "linda22@example.com",
+    "role": "student",
+    "firstName": "Linda",
+    "lastName": "Fields",
+    "createdAt": "2025-04-22T20:31:24.106Z",
+    "updatedAt": "2025-04-22T20:31:24.106Z",
+    "__v": 0
+  },
+  {
+    "_id": "6807fc9c2e25711cc59d5315",
+    "username": "ahmed_dev",
+    "email": "ahmed@example.com",
+    "role": "instructor",
+    "firstName": "Ahmed",
+    "lastName": "Ali",
+    "createdAt": "2025-04-22T20:31:24.106Z",
+    "updatedAt": "2025-04-22T20:31:24.106Z",
+    "__v": 0
+  },
+  {
+    "_id": "6807fc9c2e25711cc59d5319",
+    "username": "khaled92",
+    "email": "khaled@example.com",
+    "role": "instructor",
+    "firstName": "Khaled",
+    "lastName": "Mahmoud",
+    "createdAt": "2025-04-22T20:31:24.107Z",
+    "updatedAt": "2025-04-22T20:31:24.107Z",
+    "__v": 0
+  },
+  {
+    "_id": "6807fc9c2e25711cc59d5312",
+    "username": "george36",
+    "email": "adamssuzanne@stephens.com",
+    "role": "student",
+    "firstName": "Jennifer",
+    "lastName": "Cardenas",
+    "createdAt": "2025-04-22T20:31:24.106Z",
+    "updatedAt": "2025-04-22T20:31:24.106Z",
+    "__v": 0
+  },
+  {
+    "_id": "6807fd172e25711cc59d5321",
+    "username": "alaa",
+    "email": "alaae@gmail.com",
+    "role": "student",
+    "firstName": "alaa",
+    "lastName": "mostafa",
+    "createdAt": "2025-04-22T20:33:27.766Z",
+    "updatedAt": "2025-04-22T20:33:27.766Z",
+    "__v": 0
+  },
+  {
+    "_id": "6807fd172e25711cc59d5322",
+    "username": "samar22",
+    "email": "samar22@gmail.com",
+    "role": "student",
+    "firstName": "Samar",
+    "lastName": "Youssef",
+    "createdAt": "2025-04-22T20:33:27.766Z",
+    "updatedAt": "2025-04-22T20:33:27.766Z",
+    "__v": 0
+  },
+  {
+    "_id": "6807fd172e25711cc59d5323",
+    "username": "youssef_dev",
+    "email": "youssef@gmail.com",
+    "role": "instructor",
+    "firstName": "Youssef",
+    "lastName": "Adel",
+    "createdAt": "2025-04-22T20:33:27.766Z",
+    "updatedAt": "2025-04-22T20:33:27.766Z",
+    "__v": 0
+  },
+  {
+    "_id": "6807fd172e25711cc59d5325",
+    "username": "tarek_samy",
+    "email": "tarek_samy@gmail.com",
+    "role": "student",
+    "firstName": "Tarek",
+    "lastName": "Samy",
+    "createdAt": "2025-04-22T20:33:27.766Z",
+    "updatedAt": "2025-04-22T20:33:27.766Z",
+    "__v": 0
+  },
+  {
+    "_id": "6807fd172e25711cc59d5328",
+    "username": "salma_s",
+    "email": "salma_s@gmail.com",
+    "role": "student",
+    "firstName": "Salma",
+    "lastName": "Saeed",
+    "createdAt": "2025-04-22T20:33:27.766Z",
+    "updatedAt": "2025-04-22T20:33:27.766Z",
+    "__v": 0
+  },
+  {
+    "_id": "6807fd172e25711cc59d532a",
+    "username": "rana_omar",
+    "email": "rana.omar@gmail.com",
+    "role": "student",
+    "firstName": "Rana",
+    "lastName": "Omar",
+    "createdAt": "2025-04-22T20:33:27.766Z",
+    "updatedAt": "2025-04-22T20:33:27.766Z",
+    "__v": 0
+  }
+]
