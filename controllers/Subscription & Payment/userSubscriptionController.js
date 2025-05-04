@@ -73,3 +73,14 @@ exports.deleteUserSubscription = async (req, res) => {
     res.status(500).json({ message: err.message });
   }
 };
+
+exports.getAllUserSubscriptions = async (req, res) => {
+  try {
+    const userSubscriptions = await UserSubscription.find().populate(
+      "subscription"
+    );
+    res.status(200).json(userSubscriptions);
+  } catch (err) {
+    res.status(500).json({ message: err.message });
+  }
+};
