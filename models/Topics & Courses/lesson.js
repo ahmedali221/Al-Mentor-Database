@@ -21,6 +21,11 @@ const lessonSchema = new mongoose.Schema(
       ref: "Module",
       required: true,
     },
+    course: {
+      type: mongoose.Schema.Types.ObjectId,
+      ref: "Course",
+      required: false, // set to true if course is mandatory
+    },
     description: {
       en: {
         type: String,
