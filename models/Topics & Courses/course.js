@@ -1,4 +1,5 @@
 const mongoose = require("mongoose");
+const category = require("./category");
 const courseSchema = new mongoose.Schema(
   {
     // Core Fields
@@ -42,6 +43,11 @@ const courseSchema = new mongoose.Schema(
     instructor: {
       type: mongoose.Schema.Types.ObjectId,
       ref: "User",
+      required: true,
+    },
+    category: {
+      type: mongoose.Schema.Types.ObjectId,
+      ref: "Category",
       required: true,
     },
 

@@ -37,6 +37,11 @@ const subtopicSchema = new mongoose.Schema(
         maxlength: 300,
       }
     },
+    category: {
+      type: mongoose.Schema.Types.ObjectId,
+      ref: "Category",
+      required: true,
+    },
     thumbnailImgUrl: String,
 
     order: {

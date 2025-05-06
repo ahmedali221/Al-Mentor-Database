@@ -46,6 +46,12 @@ const categorySchema = new mongoose.Schema(
         ref: "SubTopic", // Reference to the SubTopic model
       },
     ],
+    courses: [
+      {
+        type: mongoose.Schema.Types.ObjectId,
+        ref: "Course", // Reference to the Course model
+      },
+    ],
     order: {
       type: Number,
       default: 0,

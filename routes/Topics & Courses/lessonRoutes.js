@@ -2,6 +2,7 @@ const express = require("express");
 const router = express.Router();
 const {
   createLesson,
+  getAllLessons,
   getLessonsByCourse,
   getLessonById,
   updateLesson,
@@ -9,6 +10,7 @@ const {
 } = require("../../controllers/Topics & Courses/lessonController");
 
 router.post("/", createLesson);
+router.get("/",getAllLessons);
 router.get("/course/:courseId", getLessonsByCourse);
 router.get("/:id", getLessonById); // Get lesson by ID
 router.put("/:id", updateLesson); // Update lesson
