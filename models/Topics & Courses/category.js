@@ -16,7 +16,7 @@ const categorySchema = new mongoose.Schema(
         unique: true,
         trim: true,
         maxlength: 100,
-      }
+      },
     },
     description: {
       en: {
@@ -28,7 +28,7 @@ const categorySchema = new mongoose.Schema(
         type: String,
         required: true,
         maxlength: 500,
-      }
+      },
     },
     thumbnailImgUrl: {
       type: String,
@@ -37,19 +37,22 @@ const categorySchema = new mongoose.Schema(
     topics: [
       {
         type: mongoose.Schema.Types.ObjectId,
-        ref: "Topic", // Reference to the Topic model
+        ref: "Topic",
+        default: [],
       },
     ],
     subTopics: [
       {
         type: mongoose.Schema.Types.ObjectId,
-        ref: "SubTopic", // Reference to the SubTopic model
+        ref: "SubTopic",
+        default: [],
       },
     ],
     courses: [
       {
         type: mongoose.Schema.Types.ObjectId,
-        ref: "Course", // Reference to the Course model
+        ref: "Course",
+        default: [],
       },
     ],
     order: {

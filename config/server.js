@@ -14,6 +14,9 @@ const categoryRoutes = require("../routes/Topics & Courses/categoryRoutes");
 const subTopicRoutes = require("../routes/Topics & Courses/subTopicRoutes");
 const favoriteLessonRoutes = require("../routes/Topics & Courses/favoriteLessonRoutes");
 
+// Auth Route
+const authRoutes = require("../routes/Users/authRoutes");
+
 // Enrollment Routes
 const enrollmentRoutes = require("../routes/Subscription & Payment/EnrollmentRoutes");
 const paymentRoutes = require("../routes/Subscription & Payment/PaymentRoutes");
@@ -39,8 +42,11 @@ app.use(
 
 app.use(express.json());
 
+require("dotenv").config();
+
 connectDB().then(() => {
   // Routes
+  app.use("/api/auth", authRoutes);
   app.use("/api/users", userRoutes);
   app.use("/api/instructors", instructorRoutes);
   app.use("/api/saved-courses", userSavedCourseRoutes);
@@ -53,7 +59,6 @@ connectDB().then(() => {
   app.use("/api/enrollments", enrollmentRoutes);
   app.use("/api/payments", paymentRoutes);
   app.use("/api/subscriptions", subscriptionRoutes);
-  app.use("/api/subscriptions", userSubscriptionRoutes);
   app.use("/api/user-subscriptions", userSubscriptionRoutes);
 
   app.use("/api/programs", programRoutes);

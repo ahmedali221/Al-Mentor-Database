@@ -15,7 +15,7 @@ const courseSchema = new mongoose.Schema(
         required: true,
         trim: true,
         maxlength: 120,
-      }
+      },
     },
     slug: {
       en: {
@@ -29,7 +29,7 @@ const courseSchema = new mongoose.Schema(
         unique: true,
         lowercase: true,
         required: true,
-      }
+      },
     },
     topic: {
       type: mongoose.Schema.Types.ObjectId,
@@ -62,7 +62,7 @@ const courseSchema = new mongoose.Schema(
         type: String,
         required: true,
         maxlength: 2000,
-      }
+      },
     },
     shortDescription: {
       en: {
@@ -72,12 +72,13 @@ const courseSchema = new mongoose.Schema(
       ar: {
         type: String,
         maxlength: 200,
-      }
+      },
     },
     modules: [
       {
         type: mongoose.Schema.Types.ObjectId,
         ref: "Module",
+        default: [],
       },
     ],
     freeLessons: [
@@ -85,6 +86,7 @@ const courseSchema = new mongoose.Schema(
         lessonId: {
           type: mongoose.Schema.Types.ObjectId,
           ref: "Lesson",
+          default: [],
         },
         title: String,
         duration: Number,
@@ -104,7 +106,7 @@ const courseSchema = new mongoose.Schema(
         enum: ["مبتدئ", "متوسط", "متقدم"],
         default: "مبتدئ",
         required: true,
-      }
+      },
     },
     language: {
       en: {
@@ -118,7 +120,7 @@ const courseSchema = new mongoose.Schema(
         enum: ["الإنجليزية", "العربية", "الفرنسية"],
         default: "العربية",
         required: true,
-      }
+      },
     },
     duration: {
       type: Number,

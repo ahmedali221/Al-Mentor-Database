@@ -34,10 +34,10 @@ const enrollmentSchema = new mongoose.Schema(
       },
       ar: {
         type: String,
-        enum: ["نشط", "مكتمل", "ملغي"], // Arabic equivalents
+        enum: ["نشط", "مكتمل", "ملغي"],
         default: "نشط",
         required: true,
-      }
+      },
     },
     isFree: {
       type: Boolean,
@@ -49,6 +49,7 @@ const enrollmentSchema = new mongoose.Schema(
         {
           type: mongoose.Schema.Types.ObjectId,
           ref: "Lesson",
+          default: [],
         },
       ],
       percentage: {
