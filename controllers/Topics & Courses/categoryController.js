@@ -27,7 +27,8 @@ const getAllCategories = async (req, res) => {
   try {
     const categories = await Category.find()
       .populate("topics")
-      .populate("subTopics");
+      .populate("subTopics")
+      .populate("courses");
     res.status(200).json({
       success: true,
       message: "Categories retrieved successfully",
@@ -47,7 +48,8 @@ const getCategoryById = async (req, res) => {
   try {
     const category = await Category.findById(req.params.id)
       .populate("topics")
-      .populate("subTopics");
+      .populate("subTopics")
+      .populate("courses");
     if (!category) {
       return res
         .status(404)

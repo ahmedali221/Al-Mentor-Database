@@ -1,4 +1,5 @@
 const mongoose = require("mongoose");
+const category = require("./category");
 
 const moduleSchema = mongoose.Schema(
   {
@@ -21,6 +22,7 @@ const moduleSchema = mongoose.Schema(
       ref: "Course",
       required: true,
     },
+ 
     order: {
       type: Number,
       required: true,

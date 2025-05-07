@@ -46,3 +46,13 @@ exports.getPaymentsByUser = async (req, res) => {
     res.status(500).json({ message: error.message });
   }
 };
+exports.getAllPayments = async (req, res) => {
+  try {
+    const payments = await Payment.find()
+      .populate("user")
+      .populate("subscription");
+    res.status(200).json(payments);
+  } catch (error) {
+    res.status(500).json({ message: error.message });
+  }
+};
