@@ -4,5 +4,6 @@ const paymentController = require("../../controllers/Subscription & Payment/Paym
 
 router.post("/", paymentController.createPayment);
 router.get("/user/:userId", paymentController.getPaymentsByUser);
+router.get("/", paymentController.getAllPayments);
 
 module.exports = router;
