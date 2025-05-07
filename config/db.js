@@ -3,7 +3,8 @@ const mongoose = require("mongoose");
 const connectDB = async () => {
   try {
     await mongoose.connect(
-      process.env.MONGODB_URI || "mongodb://localhost:27017/Al-Mentor_Clone"
+      process.env.MONGODB_URI ||
+        "mongodb+srv://ahmeedali332332:yYVxwSR7bKOQAAFV@cluster0.oub3q5a.mongodb.net/Al-Mentor-Database"
     );
     console.log("MongoDB Connected...");
   } catch (err) {
