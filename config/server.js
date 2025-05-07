@@ -54,6 +54,7 @@ connectDB().then(() => {
   app.use("/api/payments", paymentRoutes);
   app.use("/api/subscriptions", subscriptionRoutes);
   app.use("/api/subscriptions", userSubscriptionRoutes);
+  app.use("/api/user-subscriptions", userSubscriptionRoutes);
 
   app.use("/api/programs", programRoutes);
   app.use("/api/program-courses", programCourseRoutes);
