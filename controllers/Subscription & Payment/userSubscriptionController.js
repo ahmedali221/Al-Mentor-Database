@@ -59,6 +59,24 @@ exports.cancelSubscription = async (req, res) => {
   }
 };
 
+exports.activeSubscription = async (req, res) => {
+  try {
+    const { id } = req.params;
+
+    const subscription = await UserSubscription.findById(id);
+    if (!subscription) {
+      return res.status(404).json({ message: "Subscription not found" });
+    }
+
+    subscription.status = "active";
+    await subscription.save();
+
+    res.status(200).json(subscription);
+  } catch (err) {
+    res.status(500).json({ message: err.message });
+  }
+};
+
 exports.deleteUserSubscription = async (req, res) => {
   try {
     const { id } = req.params;

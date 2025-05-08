@@ -5,13 +5,15 @@ const {
   getUserSubscriptions,
   cancelSubscription,
   getAllUserSubscriptions,
-  deleteUserSubscription, // Added deleteUserSubscription
+  deleteUserSubscription, 
+  activeSubscription, 
 } = require("../../controllers/Subscription & Payment/userSubscriptionController");
 
 router.post("/user", subscribeUser);
 router.get("/user/:userId", getUserSubscriptions);
 router.put("/cancel/:id", cancelSubscription);
+router.put("/activate/:id", activeSubscription); 
 router.get("/", getAllUserSubscriptions);
-router.delete("/:id", deleteUserSubscription); // Added delete route
+router.delete("/:id", deleteUserSubscription); 
 
 module.exports = router;
