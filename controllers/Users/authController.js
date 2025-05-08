@@ -88,8 +88,28 @@ const checkLoggedIn = async (req, res) => {
   }
 };
 
+const checkEmailExists = async (req, res) => {
+  try {
+    const { email } = req.body;
+
+    if (!email) {
+      return res.status(400).json({ message: "Email is required" });
+    }
+
+    const user = await User.findOne({ email });
+    if (user) {
+      return res.status(200).json({ exists: true });
+    }
+
+    res.status(200).json({ exists: false });
+  } catch (error) {
+    res.status(500).json({ message: error.message });
+  }
+};
+
 module.exports = {
   login,
   register,
   checkLoggedIn,
+  checkEmailExists, // Export the new function
 };
