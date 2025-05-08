@@ -55,10 +55,21 @@ const deleteSubTopic = async (req, res) => {
   }
 };
 
+// Add this function
+const getAllSubTopics = async (req, res) => {
+  try {
+    const subTopics = await SubTopic.find();
+    res.status(200).json(subTopics);
+  } catch (error) {
+    res.status(500).json({ message: error.message });
+  }
+};
+
 module.exports = {
   createSubTopic,
   getSubTopicsByTopic,
   getSubTopicById,
   updateSubTopic,
   deleteSubTopic,
+  getAllSubTopics, // Export the new function
 };

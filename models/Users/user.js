@@ -15,7 +15,7 @@ const userSchema = mongoose.Schema(
     email: {
       type: String,
       required: true,
-      unique: true,  // This creates an index automatically
+      unique: true, // This creates an index automatically
       trim: true,
       lowercase: true,
       validate: {
@@ -35,14 +35,15 @@ const userSchema = mongoose.Schema(
       },
       select: false,
     },
-    role: {
-      type: String,
-      enum: ["student", "instructor", "admin"],
-      default: "student",
-    },
 
-    firstName: String,
-    lastName: String,
+    firstName: {
+      en: String,
+      ar: String,
+    },
+    lastName: {
+      en: String,
+      ar: String,
+    },
     profilePicture: String,
   },
   {
@@ -50,7 +51,6 @@ const userSchema = mongoose.Schema(
   }
 );
 
-// Remove duplicate index definition
 userSchema.index({ role: 1 });
 
 userSchema.pre("save", async function (next) {

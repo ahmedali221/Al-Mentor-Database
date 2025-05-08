@@ -11,7 +11,7 @@ const createCourse = async (req, res) => {
 
 const getAllCourses = async (req, res) => {
   try {
-    const courses = await Course.find().populate("instructor");
+    const courses = await Course.find().populate("instructorDetails");
     res.status(200).json(courses);
   } catch (error) {
     res.status(500).json({ message: error.message });
@@ -59,6 +59,18 @@ const deleteCourse = async (req, res) => {
     res.status(500).json({ message: error.message });
   }
 };
+const getCoursesByInstructor = async (req, res) => {
+  try {
+    const { instructorId } = req.params;
+
+    const courses = await Course.find({ instructor: instructorId }).populate("instructor");
+
+    res.status(200).json(courses);
+  } catch (error) {
+    res.status(500).json({ message: error.message });
+  }
+};
+
 
 module.exports = {
   createCourse,
@@ -66,4 +78,5 @@ module.exports = {
   getCourseById,
   updateCourse,
   deleteCourse,
+  getCoursesByInstructor,
 };

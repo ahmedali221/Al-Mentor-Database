@@ -4,28 +4,30 @@ const Subscription = require("../../models/Subscriptions & Payment/subscription"
 
 exports.createPayment = async (req, res) => {
   try {
-    const { userId, subscriptionName, amount, transactionId } = req.body;
+    const { user, subscription, amount, transactionId, currency, paymentMethod, status } = req.body;
 
-    if (!userId || !subscriptionName || !amount || !transactionId) {
+    if (!user || !subscription || !amount || !transactionId || !currency || !paymentMethod || !status) {
       return res.status(400).json({ message: "All fields are required" });
     }
 
-    const user = await User.findById(userId);
-    if (!user) {
+    const userDoc = await User.findById(user);
+    if (!userDoc) {
       return res.status(404).json({ message: "User not found" });
     }
 
-    const subscription = await Subscription.findOne({ name: subscriptionName });
-    if (!subscription) {
+    const subscriptionDoc = await Subscription.findById(subscription);
+    if (!subscriptionDoc) {
       return res.status(404).json({ message: "Subscription not found" });
     }
 
     const payment = await Payment.create({
-      userId,
-      subscriptionId: subscription._id,
+      user,
+      subscription,
       amount,
+      currency,
       transactionId,
-      status: "completed",
+      paymentMethod,
+      status
     });
 
     res.status(201).json({
@@ -39,8 +41,19 @@ exports.createPayment = async (req, res) => {
 
 exports.getPaymentsByUser = async (req, res) => {
   try {
-    const { userId } = req.params;
-    const payments = await Payment.find({ userId }).populate("subscriptionId");
+    const { user } = req.params;
+    const payments = await Payment.find({ user }).populate("subscription");
+    res.status(200).json(payments);
+  } catch (error) {
+    res.status(500).json({ message: error.message });
+  }
+};
+
+exports.getAllPayments = async (req, res) => {
+  try {
+    const payments = await Payment.find()
+      .populate("user")
+      .populate("subscription");
     res.status(200).json(payments);
   } catch (error) {
     res.status(500).json({ message: error.message });

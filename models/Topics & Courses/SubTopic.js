@@ -3,10 +3,18 @@ const mongoose = require("mongoose");
 const subtopicSchema = new mongoose.Schema(
   {
     name: {
-      type: String,
-      required: [true, "SubTopic name is required"],
-      trim: true,
-      maxlength: 100,
+      en: {
+        type: String,
+        required: [true, "SubTopic name (English) is required"],
+        trim: true,
+        maxlength: 100,
+      },
+      ar: {
+        type: String,
+        required: [true, "SubTopic name (Arabic) is required"],
+        trim: true,
+        maxlength: 100,
+      }
     },
     slug: {
       type: String,
@@ -20,8 +28,19 @@ const subtopicSchema = new mongoose.Schema(
       required: true,
     },
     description: {
-      type: String,
-      maxlength: 300,
+      en: {
+        type: String,
+        maxlength: 300,
+      },
+      ar: {
+        type: String,
+        maxlength: 300,
+      }
+    },
+    category: {
+      type: mongoose.Schema.Types.ObjectId,
+      ref: "Category",
+      required: true,
     },
     thumbnailImgUrl: String,
 
@@ -40,6 +59,5 @@ const subtopicSchema = new mongoose.Schema(
 );
 
 subtopicSchema.index({ topic: 1, order: 1 });
-subtopicSchema.index({ slug: 1 });
 
 module.exports = mongoose.model("SubTopic", subtopicSchema);

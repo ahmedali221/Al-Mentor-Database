@@ -18,6 +18,16 @@ const getLessonsByCourse = async (req, res) => {
   }
 };
 
+const getAllLessons = async (req, res) => {
+  try {
+    const lessons = await Lesson.find();
+    res.status(200).json(lessons);
+  } catch (error) {
+    res.status(500).json({ message: error.message });
+  }
+};
+
+
 // Get Lesson By ID
 const getLessonById = async (req, res) => {
   try {
@@ -68,4 +78,5 @@ module.exports = {
   getLessonById,
   updateLesson,
   deleteLesson,
+  getAllLessons,
 };

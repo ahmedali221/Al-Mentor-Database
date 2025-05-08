@@ -28,9 +28,18 @@ const paymentSchema = new mongoose.Schema(
       required: true,
     },
     status: {
-      type: String,
-      enum: ["pending", "completed", "failed"],
-      default: "pending",
+      en: {
+        type: String,
+        enum: ["pending", "completed", "failed"],
+        default: "pending",
+        required: true,
+      },
+      ar: {
+        type: String,
+        enum: ["قيد الانتظار", "مكتمل", "فشل"], // Arabic equivalents
+        default: "قيد الانتظار",
+        required: true,
+      }
     },
     paymentMethod: {
       type: String,
@@ -48,6 +57,5 @@ paymentSchema.index({ user: 1 });
 // Remove the duplicate transactionId index if it's defined twice
 paymentSchema.index({ userId: 1 });
 paymentSchema.index({ status: 1 });
-paymentSchema.index({ transactionId: 1 });
 
 module.exports = mongoose.model("Payment", paymentSchema);

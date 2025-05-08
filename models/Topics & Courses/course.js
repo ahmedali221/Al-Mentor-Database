@@ -1,18 +1,35 @@
 const mongoose = require("mongoose");
+const category = require("./category");
 const courseSchema = new mongoose.Schema(
   {
     // Core Fields
     title: {
-      type: String,
-      required: true,
-      trim: true,
-      maxlength: 120,
+      en: {
+        type: String,
+        required: true,
+        trim: true,
+        maxlength: 120,
+      },
+      ar: {
+        type: String,
+        required: true,
+        trim: true,
+        maxlength: 120,
+      },
     },
     slug: {
-      type: String,
-      unique: true,
-      lowercase: true,
-      required: true,
+      en: {
+        type: String,
+        unique: true,
+        lowercase: true,
+        required: true,
+      },
+      ar: {
+        type: String,
+        unique: true,
+        lowercase: true,
+        required: true,
+      },
     },
     topic: {
       type: mongoose.Schema.Types.ObjectId,
@@ -28,21 +45,40 @@ const courseSchema = new mongoose.Schema(
       ref: "User",
       required: true,
     },
+    category: {
+      type: mongoose.Schema.Types.ObjectId,
+      ref: "Category",
+      required: true,
+    },
 
     // Content
     description: {
-      type: String,
-      required: true,
-      maxlength: 2000,
+      en: {
+        type: String,
+        required: true,
+        maxlength: 2000,
+      },
+      ar: {
+        type: String,
+        required: true,
+        maxlength: 2000,
+      },
     },
     shortDescription: {
-      type: String,
-      maxlength: 200,
+      en: {
+        type: String,
+        maxlength: 200,
+      },
+      ar: {
+        type: String,
+        maxlength: 200,
+      },
     },
     modules: [
       {
         type: mongoose.Schema.Types.ObjectId,
         ref: "Module",
+        default: [],
       },
     ],
     freeLessons: [
@@ -50,6 +86,7 @@ const courseSchema = new mongoose.Schema(
         lessonId: {
           type: mongoose.Schema.Types.ObjectId,
           ref: "Lesson",
+          default: [],
         },
         title: String,
         duration: Number,
@@ -58,14 +95,32 @@ const courseSchema = new mongoose.Schema(
 
     // Filtering/Sorting
     level: {
-      type: String,
-      enum: ["beginner", "intermediate", "advanced"],
-      default: "beginner",
+      en: {
+        type: String,
+        enum: ["beginner", "intermediate", "advanced"],
+        default: "beginner",
+        required: true,
+      },
+      ar: {
+        type: String,
+        enum: ["مبتدئ", "متوسط", "متقدم"],
+        default: "مبتدئ",
+        required: true,
+      },
     },
     language: {
-      type: String,
-      enum: ["ar", "en", "fr"],
-      default: "ar",
+      en: {
+        type: String,
+        enum: ["English", "Arabic", "French"],
+        default: "Arabic",
+        required: true,
+      },
+      ar: {
+        type: String,
+        enum: ["الإنجليزية", "العربية", "الفرنسية"],
+        default: "العربية",
+        required: true,
+      },
     },
     duration: {
       type: Number,
@@ -100,15 +155,26 @@ const courseSchema = new mongoose.Schema(
   },
   {
     timestamps: true,
+    toJSON: { virtuals: true },
+    toObject: { virtuals: true },
   }
 );
 
-// Keep only these indexes and remove duplicate slug index
+// Indexes
 courseSchema.index({ topic: 1 });
 courseSchema.index({ subtopic: 1 });
 courseSchema.index({ language: 1 });
 courseSchema.index({ level: 1 });
 courseSchema.index({ lastUpdated: -1 });
 courseSchema.index({ enrollmentCount: -1 });
+
+// Virtual for instructor details
+courseSchema.virtual("instructorDetails", {
+  ref: "Instructor",
+  localField: "instructor",
+  foreignField: "_id",
+  justOne: true,
+  options: { select: "user expertiseAreas", populate: { path: "profile" } },
+});
 
 module.exports = mongoose.model("Course", courseSchema);

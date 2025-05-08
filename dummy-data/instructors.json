@@ -1,0 +1,95 @@
+{
+  "instructors": [
+    {
+      "_id": "64f1a2b3c4d5e6f7a8b9d0a1",
+      "user": "64f1a2b3c4d5e6f7a8b9c0a1",
+      "professionalTitle": {
+        "en": "Senior Web Developer",
+        "ar": "مطور ويب أول"
+      },
+      "expertiseAreas": {
+        "en": ["Web Development", "JavaScript", "React", "Node.js"],
+        "ar": ["تطوير الويب", "جافاسكريبت", "رياكت", "نود جي إس"]
+      },
+      "biography": {
+        "en": "Ahmed is a senior web developer with over 10 years of experience in building scalable web applications. He specializes in full-stack development using modern JavaScript frameworks and has led multiple development teams throughout his career.",
+        "ar": "أحمد هو مطور ويب أول لديه أكثر من 10 سنوات من الخبرة في بناء تطبيقات الويب قابلة للتوسع. يتخصص في تطوير الواجهة الأمامية والخلفية باستخدام أطر عمل جافاسكريبت الحديثة وقاد العديد من فرق التطوير خلال مسيرته المهنية."
+      },
+      "socialMediaLinks": {
+        "linkedin": "https://linkedin.com/in/ahmed-ali",
+        "twitter": "https://twitter.com/ahmed_ali",
+        "website": "https://ahmedali.dev"
+      },
+      "yearsOfExperience": 10,
+      "approvalStatus": "approved"
+    },
+    {
+      "_id": "64f1a2b3c4d5e6f7a8b9d0a2",
+      "user": "64f1a2b3c4d5e6f7a8b9c0a2",
+      "professionalTitle": {
+        "en": "Data Science Instructor",
+        "ar": "مدربة علوم البيانات"
+      },
+      "expertiseAreas": {
+        "en": ["Data Science", "Machine Learning", "Python", "Statistics"],
+        "ar": ["علوم البيانات", "تعلم الآلة", "بايثون", "الإحصاء"]
+      },
+      "biography": {
+        "en": "Sara is a data science professional with expertise in machine learning and statistical analysis. She has worked on numerous data-driven projects and enjoys teaching others how to extract meaningful insights from data.",
+        "ar": "سارة هي متخصصة في علوم البيانات ولديها خبرة في تعلم الآلة والتحليل الإحصائي. عملت على العديد من المشاريع القائمة على البيانات وتستمتع بتعليم الآخرين كيفية استخراج رؤى مفيدة من البيانات."
+      },
+      "socialMediaLinks": {
+        "linkedin": "https://linkedin.com/in/sara-hassan",
+        "youtube": "https://youtube.com/c/sarahassan",
+        "website": "https://sarahassan.com"
+      },
+      "yearsOfExperience": 7,
+      "approvalStatus": "approved"
+    },
+    {
+      "_id": "64f1a2b3c4d5e6f7a8b9d0a3",
+      "user": "64f1a2b3c4d5e6f7a8b9c0a3",
+      "professionalTitle": {
+        "en": "Mobile App Developer",
+        "ar": "مطور تطبيقات الجوال"
+      },
+      "expertiseAreas": {
+        "en": ["Mobile Development", "Flutter", "React Native", "iOS", "Android"],
+        "ar": ["تطوير تطبيقات الجوال", "فلاتر", "رياكت نيتف", "آي أو إس", "أندرويد"]
+      },
+      "biography": {
+        "en": "Mohamed is a mobile application developer with expertise in cross-platform frameworks. He has developed and published multiple apps on both the App Store and Google Play, reaching thousands of users worldwide.",
+        "ar": "محمد هو مطور تطبيقات جوال متخصص في أطر العمل متعددة المنصات. قام بتطوير ونشر العديد من التطبيقات على كل من متجر التطبيقات وجوجل بلاي، ووصل إلى آلاف المستخدمين حول العالم."
+      },
+      "socialMediaLinks": {
+        "linkedin": "https://linkedin.com/in/mohamed-ibrahim",
+        "twitter": "https://twitter.com/mohamed_dev",
+        "youtube": "https://youtube.com/c/mohameddev"
+      },
+      "yearsOfExperience": 5,
+      "approvalStatus": "approved"
+    },
+    {
+      "_id": "64f1a2b3c4d5e6f7a8b9d0a4",
+      "user": "64f1a2b3c4d5e6f7a8b9c0a4",
+      "professionalTitle": {
+        "en": "UX/UI Designer",
+        "ar": "مصممة تجربة وواجهة المستخدم"
+      },
+      "expertiseAreas": {
+        "en": ["UX Design", "UI Design", "Figma", "Adobe XD", "User Research"],
+        "ar": ["تصميم تجربة المستخدم", "تصميم واجهة المستخدم", "فيجما", "أدوبي إكس دي", "أبحاث المستخدم"]
+      },
+      "biography": {
+        "en": "Layla is a UX/UI designer passionate about creating intuitive and accessible digital experiences. She combines user research with creative design solutions to build products that users love.",
+        "ar": "ليلى هي مصممة تجربة وواجهة المستخدم شغوفة بإنشاء تجارب رقمية بديهية وسهلة الوصول. تجمع بين أبحاث المستخدم وحلول التصميم الإبداعية لبناء منتجات يحبها المستخدمون."
+      },
+      "socialMediaLinks": {
+        "linkedin": "https://linkedin.com/in/layla-mahmoud",
+        "website": "https://layladesigns.com"
+      },
+      "yearsOfExperience": 6,
+      "approvalStatus": "approved"
+    }
+  ]
+}

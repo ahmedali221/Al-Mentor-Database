@@ -1,0 +1,16 @@
+{
+  "subtopics": [
+    {
+      "name": { "en": "Frontend Development", "ar": "تطوير الواجهة الأمامية" },
+      "slug": "frontend-development",
+      "topic": "64f1a2b3c4d5e6f7a8b9c0d1",
+      "description": {
+        "en": "Learn HTML, CSS, JavaScript, and modern frontend frameworks.",
+        "ar": "تعلم HTML و CSS و JavaScript وأطر العمل الحديثة."
+      },
+      "thumbnailImgUrl": "https://example.com/frontend-thumbnail.jpg",
+      "order": 1,
+      "isFeatured": true
+    }
+  ]
+}

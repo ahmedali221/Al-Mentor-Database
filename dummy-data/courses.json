@@ -1,0 +1,36 @@
+{
+  "courses": [
+    {
+      "title": { "en": "Introduction to Web Development", "ar": "مقدمة في تطوير الويب" },
+      "slug": {
+        "en": "introduction-to-web-development",
+        "ar": "مقدمة-في-تطوير-الويب"
+      },
+      "topic": "64f1a2b3c4d5e6f7a8b9c0d1",
+      "instructor": "64f1a2b3c4d5e6f7a8b9c0a1",
+      "description": {
+        "en": "Learn the fundamentals of web development.",
+        "ar": "تعلم أساسيات تطوير الويب."
+      },
+      "shortDescription": {
+        "en": "Start your web development journey.",
+        "ar": "ابدأ رحلتك في تطوير الويب."
+      },
+      "level": {
+        "en": "beginner",
+        "ar": "مبتدئ"
+      },
+      "language": {
+        "en": "English",
+        "ar": "الإنجليزية"
+      },
+      "duration": 30,
+      "isFree": true,
+      "enrollmentCount": 0,
+      "rating": {
+        "average": 0,
+        "count": 0
+      }
+    }
+  ]
+}

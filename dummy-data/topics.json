@@ -1,0 +1,16 @@
+{
+  "topics": [
+    {
+      "name": { "en": "Web Development", "ar": "تطوير الويب" },
+      "slug": "web-development",
+      "description": {
+        "en": "Courses related to building websites and web applications.",
+        "ar": "دورات متعلقة ببناء مواقع وتطبيقات الويب."
+      },
+      "thumbnailImgUrl": "https://example.com/images/web-dev.png",
+      "availableLanguages": ["en", "ar"],
+      "order": 1,
+      "courseCount": 2
+    }
+  ]
+}

@@ -3,18 +3,18 @@ const mongoose = require("mongoose");
 const subscriptionSchema = new mongoose.Schema({
   name: {
     type: String,
-    required: true, // Ensure name is a string and required
+    required: true,
   },
   displayName: {
-    en: { type: String, required: true }, 
-    ar: { type: String, required: true }, 
+    en: { type: String, required: true },
+    ar: { type: String, required: true },
   },
   description: {
-    en: { type: String, required: true }, 
-    ar: { type: String, required: true }, 
+    en: { type: String, required: true },
+    ar: { type: String, required: true },
   },
   price: {
-    amount: { type: Number, required: true }, 
+    amount: { type: Number, required: true },
     originalAmount: { type: Number },
     currency: { type: String, required: true },
   },

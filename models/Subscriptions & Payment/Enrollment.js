@@ -26,9 +26,18 @@ const enrollmentSchema = new mongoose.Schema(
       default: Date.now,
     },
     status: {
-      type: String,
-      enum: ["active", "completed", "cancelled"],
-      default: "active",
+      en: {
+        type: String,
+        enum: ["active", "completed", "cancelled"],
+        default: "active",
+        required: true,
+      },
+      ar: {
+        type: String,
+        enum: ["نشط", "مكتمل", "ملغي"],
+        default: "نشط",
+        required: true,
+      },
     },
     isFree: {
       type: Boolean,
@@ -40,6 +49,7 @@ const enrollmentSchema = new mongoose.Schema(
         {
           type: mongoose.Schema.Types.ObjectId,
           ref: "Lesson",
+          default: [],
         },
       ],
       percentage: {

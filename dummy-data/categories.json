@@ -1,0 +1,17 @@
+{
+  "categories": [
+    {
+      "name": {
+        "en": "Programming",
+        "ar": "البرمجة"
+      },
+      "slug": "programming",
+      "description": {
+        "en": "Learn programming languages and concepts.",
+        "ar": "تعلم لغات البرمجة والمفاهيم."
+      },
+      "thumbnailImgUrl": "https://example.com/images/programming.png",
+      "order": 1
+    }
+  ]
+}

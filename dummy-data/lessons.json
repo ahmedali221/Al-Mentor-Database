@@ -1,0 +1,325 @@
+{
+    "lessons": [
+        {
+            "title": {
+                "en": "What is Web Development?",
+                "ar": "ما هو تطوير الويب؟"
+            },
+            "module": "64f1a2b3c4d5e6f7a8b9c0d1",
+            "description": {
+                "en": "An introduction to web development, its importance, and career opportunities.",
+                "ar": "مقدمة عن تطوير الويب وأهميته وفرص العمل المتاحة."
+            },
+            "order": 1,
+            "duration": 30,
+            "content": {
+                "videoUrl": "https://example.com/videos/web-dev-intro.mp4",
+                "articleText": {
+                    "en": "Web development is the work involved in developing a website...",
+                    "ar": "تطوير الويب هو العمل المتضمن في تطوير موقع ويب..."
+                },
+                "attachments": [
+                    {
+                        "name": {
+                            "en": "Web Development Roadmap",
+                            "ar": "خريطة طريق تطوير الويب"
+                        },
+                        "url": "https://example.com/attachments/web-dev-roadmap.pdf",
+                        "type": "pdf"
+                    }
+                ]
+            },
+            "isFree": true,
+            "isPublished": true
+        },
+        {
+            "title": {
+                "en": "HTML Structure and Elements",
+                "ar": "هيكل وعناصر HTML"
+            },
+            "module": "64f1a2b3c4d5e6f7a8b9c0d2",
+            "description": {
+                "en": "Learn about HTML document structure and common elements.",
+                "ar": "تعرف على هيكل مستند HTML والعناصر الشائعة."
+            },
+            "order": 1,
+            "duration": 45,
+            "content": {
+                "videoUrl": "https://example.com/videos/html-basics.mp4",
+                "articleText": {
+                    "en": "HTML documents are made up of elements...",
+                    "ar": "تتكون مستندات HTML من عناصر..."
+                },
+                "attachments": [
+                    {
+                        "name": {
+                            "en": "HTML Cheat Sheet",
+                            "ar": "ورقة غش HTML"
+                        },
+                        "url": "https://example.com/attachments/html-cheat-sheet.pdf",
+                        "type": "pdf"
+                    }
+                ]
+            },
+            "isFree": true,
+            "isPublished": true
+        },
+        {
+            "title": {
+                "en": "CSS Selectors and Properties",
+                "ar": "محددات وخصائص CSS"
+            },
+            "module": "64f1a2b3c4d5e6f7a8b9c0d3",
+            "description": {
+                "en": "Understanding CSS selectors and common styling properties.",
+                "ar": "فهم محددات CSS وخصائص التنسيق الشائعة."
+            },
+            "order": 1,
+            "duration": 50,
+            "content": {
+                "videoUrl": "https://example.com/videos/css-selectors.mp4",
+                "articleText": {
+                    "en": "CSS selectors are patterns used to select elements...",
+                    "ar": "محددات CSS هي أنماط تستخدم لتحديد العناصر..."
+                },
+                "attachments": [
+                    {
+                        "name": {
+                            "en": "CSS Properties Reference",
+                            "ar": "مرجع خصائص CSS"
+                        },
+                        "url": "https://example.com/attachments/css-properties.pdf",
+                        "type": "pdf"
+                    }
+                ]
+            },
+            "isFree": false,
+            "isPublished": true
+        },
+        {
+            "title": {
+                "en": "JavaScript Variables and Data Types",
+                "ar": "المتغيرات وأنواع البيانات في JavaScript"
+            },
+            "module": "64f1a2b3c4d5e6f7a8b9c0d4",
+            "description": {
+                "en": "Introduction to JavaScript variables and different data types.",
+                "ar": "مقدمة عن المتغيرات وأنواع البيانات المختلفة في JavaScript."
+            },
+            "order": 1,
+            "duration": 40,
+            "content": {
+                "videoUrl": "https://example.com/videos/js-variables.mp4",
+                "articleText": {
+                    "en": "Variables are containers for storing data...",
+                    "ar": "المتغيرات هي حاويات لتخزين البيانات..."
+                },
+                "attachments": [
+                    {
+                        "name": {
+                            "en": "JavaScript Basics Guide",
+                            "ar": "دليل أساسيات JavaScript"
+                        },
+                        "url": "https://example.com/attachments/js-basics.pdf",
+                        "type": "pdf"
+                    }
+                ]
+            },
+            "isFree": false,
+            "isPublished": true
+        },
+        {
+            "title": {
+                "en": "Python Installation and Setup",
+                "ar": "تثبيت وإعداد Python"
+            },
+            "module": "64f1a2b3c4d5e6f7a8b9c0d5",
+            "description": {
+                "en": "Learn how to install Python and set up your development environment.",
+                "ar": "تعلم كيفية تثبيت Python وإعداد بيئة التطوير الخاصة بك."
+            },
+            "order": 1,
+            "duration": 30,
+            "content": {
+                "videoUrl": "https://example.com/videos/python-setup.mp4",
+                "articleText": {
+                    "en": "Python can be installed on various operating systems...",
+                    "ar": "يمكن تثبيت Python على أنظمة تشغيل مختلفة..."
+                },
+                "attachments": [
+                    {
+                        "name": {
+                            "en": "Python Installation Guide",
+                            "ar": "دليل تثبيت Python"
+                        },
+                        "url": "https://example.com/attachments/python-install.pdf",
+                        "type": "pdf"
+                    }
+                ]
+            },
+            "isFree": true,
+            "isPublished": true
+        },
+        {
+            "title": {
+                "en": "Data Analysis with Pandas",
+                "ar": "تحليل البيانات باستخدام Pandas"
+            },
+            "module": "64f1a2b3c4d5e6f7a8b9c0d6",
+            "description": {
+                "en": "Introduction to data analysis using the Pandas library.",
+                "ar": "مقدمة في تحليل البيانات باستخدام مكتبة Pandas."
+            },
+            "order": 1,
+            "duration": 60,
+            "content": {
+                "videoUrl": "https://example.com/videos/pandas-intro.mp4",
+                "articleText": {
+                    "en": "Pandas is a powerful data analysis library...",
+                    "ar": "Pandas هي مكتبة قوية لتحليل البيانات..."
+                },
+                "attachments": [
+                    {
+                        "name": {
+                            "en": "Pandas Cheat Sheet",
+                            "ar": "ورقة غش Pandas"
+                        },
+                        "url": "https://example.com/attachments/pandas-cheat-sheet.pdf",
+                        "type": "pdf"
+                    }
+                ]
+            },
+            "isFree": false,
+            "isPublished": true
+        },
+        {
+            "title": {
+                "en": "Introduction to Machine Learning",
+                "ar": "مقدمة في التعلم الآلي"
+            },
+            "module": "64f1a2b3c4d5e6f7a8b9c0d7",
+            "description": {
+                "en": "Basic concepts and applications of machine learning.",
+                "ar": "المفاهيم الأساسية وتطبيقات التعلم الآلي."
+            },
+            "order": 1,
+            "duration": 45,
+            "content": {
+                "videoUrl": "https://example.com/videos/ml-intro.mp4",
+                "articleText": {
+                    "en": "Machine learning is a subset of artificial intelligence...",
+                    "ar": "التعلم الآلي هو مجموعة فرعية من الذكاء الاصطناعي..."
+                },
+                "attachments": [
+                    {
+                        "name": {
+                            "en": "ML Fundamentals Guide",
+                            "ar": "دليل أساسيات التعلم الآلي"
+                        },
+                        "url": "https://example.com/attachments/ml-fundamentals.pdf",
+                        "type": "pdf"
+                    }
+                ]
+            },
+            "isFree": false,
+            "isPublished": true
+        },
+        {
+            "title": {
+                "en": "React Native Setup",
+                "ar": "إعداد React Native"
+            },
+            "module": "64f1a2b3c4d5e6f7a8b9c0d8",
+            "description": {
+                "en": "Setting up your development environment for React Native.",
+                "ar": "إعداد بيئة التطوير الخاصة بك لـ React Native."
+            },
+            "order": 1,
+            "duration": 40,
+            "content": {
+                "videoUrl": "https://example.com/videos/rn-setup.mp4",
+                "articleText": {
+                    "en": "React Native requires specific setup for different platforms...",
+                    "ar": "يتطلب React Native إعدادًا خاصًا لمنصات مختلفة..."
+                },
+                "attachments": [
+                    {
+                        "name": {
+                            "en": "React Native Setup Guide",
+                            "ar": "دليل إعداد React Native"
+                        },
+                        "url": "https://example.com/attachments/rn-setup.pdf",
+                        "type": "pdf"
+                    }
+                ]
+            },
+            "isFree": true,
+            "isPublished": true
+        },
+        {
+            "title": {
+                "en": "Building Your First App",
+                "ar": "بناء أول تطبيق لك"
+            },
+            "module": "64f1a2b3c4d5e6f7a8b9c0d9",
+            "description": {
+                "en": "Create your first mobile application using React Native.",
+                "ar": "أنشئ أول تطبيق جوال لك باستخدام React Native."
+            },
+            "order": 1,
+            "duration": 60,
+            "content": {
+                "videoUrl": "https://example.com/videos/first-app.mp4",
+                "articleText": {
+                    "en": "Let's build a simple mobile application...",
+                    "ar": "دعنا نبني تطبيق جوال بسيط..."
+                },
+                "attachments": [
+                    {
+                        "name": {
+                            "en": "App Development Guide",
+                            "ar": "دليل تطوير التطبيقات"
+                        },
+                        "url": "https://example.com/attachments/app-dev.pdf",
+                        "type": "pdf"
+                    }
+                ]
+            },
+            "isFree": false,
+            "isPublished": true
+        },
+        {
+            "title": {
+                "en": "Advanced React Native Features",
+                "ar": "ميزات React Native المتقدمة"
+            },
+            "module": "64f1a2b3c4d5e6f7a8b9c0d10",
+            "description": {
+                "en": "Learn about advanced features and best practices in React Native.",
+                "ar": "تعرف على الميزات المتقدمة وأفضل الممارسات في React Native."
+            },
+            "order": 1,
+            "duration": 50,
+            "content": {
+                "videoUrl": "https://example.com/videos/advanced-rn.mp4",
+                "articleText": {
+                    "en": "React Native offers many advanced features...",
+                    "ar": "يقدم React Native العديد من الميزات المتقدمة..."
+                },
+                "attachments": [
+                    {
+                        "name": {
+                            "en": "Advanced React Native Guide",
+                            "ar": "دليل React Native المتقدم"
+                        },
+                        "url": "https://example.com/attachments/advanced-rn.pdf",
+                        "type": "pdf"
+                    }
+                ]
+            },
+            "isFree": false,
+            "isPublished": true
+        }
+    ]
+}
+  

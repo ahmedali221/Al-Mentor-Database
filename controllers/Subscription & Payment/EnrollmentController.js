@@ -1,40 +1,40 @@
 const Enrollment = require("../../models/Subscriptions & Payment/Enrollment");
 const User = require("../../models/Users/user");
 const Course = require("../../models/Topics & Courses/course");
-const Subscription = require("../../models/Subscriptions & Payment/subscription");
+const UserSubscription = require("../../models/Subscriptions & Payment/userSubscription"); // Add this import
 
 exports.createEnrollment = async (req, res) => {
   try {
-    const { userId, courseId } = req.body;
-    if (!userId || !courseId) {
-      return res
-        .status(400)
-        .json({ message: "User ID and Course ID are required" });
+    const { user, course } = req.body;
+    if (!user || !course) {
+      return res.status(400).json({ message: "User and Course are required" });
     }
 
-    const user = await User.findById(userId);
-    if (!user) {
+    const userDoc = await User.findById(user);
+    if (!userDoc) {
       return res.status(404).json({ message: "User not found" });
     }
 
-    const course = await Course.findById(courseId);
-    if (!course) {
+    const courseDoc = await Course.findById(course);
+    if (!courseDoc) {
       return res.status(404).json({ message: "Course not found" });
     }
 
-    const activeSubscription = await Subscription.findOne({
-      userId,
-      status: "active",
+    // Find an active user subscription for this user
+    const activeUserSubscription = await UserSubscription.findOne({
+      userId: user,
+      "status.en": "active",
     });
 
-    if (!activeSubscription) {
+    if (!activeUserSubscription) {
       return res.status(403).json({ message: "No active subscription found" });
     }
 
     const enrollment = await Enrollment.create({
-      userId,
-      courseId,
-      subscriptionId: activeSubscription._id,
+      user,
+      course,
+      subscription: activeUserSubscription.subscriptionId, // or .subscription if that's the field name
+      status: { en: "active", ar: "نشط" },
     });
 
     res.status(201).json({
@@ -48,8 +48,8 @@ exports.createEnrollment = async (req, res) => {
 
 exports.getEnrollmentsByUser = async (req, res) => {
   try {
-    const { userId } = req.params;
-    const enrollments = await Enrollment.find({ userId }).populate("courseId");
+    const { user } = req.params;
+    const enrollments = await Enrollment.find({ user }).populate("course");
     res.status(200).json(enrollments);
   } catch (error) {
     res.status(500).json({ message: error.message });
