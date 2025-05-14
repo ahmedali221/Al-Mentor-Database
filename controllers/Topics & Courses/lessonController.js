@@ -3,12 +3,21 @@ const Lesson = require("../../models/Topics & Courses/lesson");
 const createLesson = async (req, res) => {
   try {
     const lesson = await Lesson.create(req.body);
-    res.status(201).json(lesson);
+    const populated = await lesson.populate('course');
+    res.status(201).json(populated); 
   } catch (error) {
     res.status(400).json({ message: error.message });
   }
 };
 
+const getAllLessons = async (req, res) => {
+  try {
+    const lessons = await Lesson.find().populate('course');
+    res.status(200).json(lessons);
+  } catch (error) {
+    res.status(500).json({ message: error.message });
+  }
+};
 const getLessonsByCourse = async (req, res) => {
   try {
     const lessons = await Lesson.find({ course: req.params.courseId });
@@ -18,14 +27,6 @@ const getLessonsByCourse = async (req, res) => {
   }
 };
 
-const getAllLessons = async (req, res) => {
-  try {
-    const lessons = await Lesson.find();
-    res.status(200).json(lessons);
-  } catch (error) {
-    res.status(500).json({ message: error.message });
-  }
-};
 
 
 // Get Lesson By ID

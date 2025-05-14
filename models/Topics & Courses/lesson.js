@@ -14,7 +14,7 @@ const lessonSchema = new mongoose.Schema(
         required: true,
         trim: true,
         maxlength: 100,
-      }
+      },
     },
     module: {
       type: mongoose.Schema.Types.ObjectId,
@@ -24,7 +24,7 @@ const lessonSchema = new mongoose.Schema(
     course: {
       type: mongoose.Schema.Types.ObjectId,
       ref: "Course",
-      required: false, // set to true if course is mandatory
+      required: false,
     },
     description: {
       en: {
@@ -36,7 +36,7 @@ const lessonSchema = new mongoose.Schema(
         type: String,
         trim: true,
         maxlength: 500,
-      }
+      },
     },
     order: {
       type: Number,
@@ -51,13 +51,13 @@ const lessonSchema = new mongoose.Schema(
       videoUrl: String,
       articleText: {
         en: String,
-        ar: String
+        ar: String,
       },
       attachments: [
         {
           name: {
             en: String,
-            ar: String
+            ar: String,
           },
           url: String,
           type: { type: String, enum: ["pdf", "slide", "audio"] },
