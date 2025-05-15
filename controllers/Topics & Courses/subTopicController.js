@@ -56,7 +56,6 @@ const deleteSubTopic = async (req, res) => {
 };
 
 // Add this function
-
 const getAllSubTopics = async (req, res) => {
   try {
     const subTopics = await SubTopic.find(); 
