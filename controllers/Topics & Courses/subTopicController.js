@@ -71,5 +71,5 @@ module.exports = {
   getSubTopicById,
   updateSubTopic,
   deleteSubTopic,
-  getAllSubTopics, // Export the new function
+  getAllSubTopics, 
 };

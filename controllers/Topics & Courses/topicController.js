@@ -63,17 +63,21 @@ const getCoursesByTopic = async (req, res) => {
   try {
     const { id } = req.params;
 
-    // First verify the topic exists
     const topic = await Topic.findById(id);
     if (!topic) {
       return res.status(404).json({ message: "Topic not found" });
     }
 
-    // Get all courses for this topic
-    const courses = await Course.find({ topic: id })
-      .populate("instructor", "name email role")
-      .populate("topic", "name")
-      .populate("subTopic", "name");
+   const courses = await Course.find({ topic: id })
+  .populate({
+    path: "instructor",
+    populate: {
+      path: "user",
+      select: "username email firstName lastName profilePicture"
+    }
+  })
+  .populate("topic", "name")
+  .populate("subTopic", "name");
 
     res.status(200).json({
       topic: {

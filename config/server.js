@@ -34,11 +34,13 @@ const app = express();
 // Connect To LocalHost
 app.use(
   cors({
-    origin: "http://localhost:4200",
+    origin: ["http://localhost:3000","http://localhost:4200"], 
     methods: ["GET", "POST", "PUT", "DELETE", "OPTIONS"],
     allowedHeaders: ["Content-Type", "Authorization"],
+    credentials: true, 
   })
 );
+
 
 app.use(express.json());
 
@@ -57,7 +59,7 @@ connectDB().then(() => {
   app.use("/api/topics", topicRoutes);
   app.use("/api/subtopics", subTopicRoutes);
   app.use("/api/enrollments", enrollmentRoutes);
-  app.use("/api/payments", paymentRoutes);
+  // app.use("/api/payments", paymentRoutes);
   app.use("/api/subscriptions", subscriptionRoutes);
   app.use("/api/user-subscriptions", userSubscriptionRoutes);
 

@@ -17,7 +17,7 @@ const createInstructor = async (req, res) => {
 
     const populatedInstructor = await Instructor.findById(
       instructor._id
-    ).populate("profile");
+    ).populate("user");
 
     res.status(201).json({
       success: true,
@@ -39,7 +39,7 @@ const createInstructor = async (req, res) => {
 };
 const getallInstructors = async (req, res) => {
   try {
-    const instructors = await Instructor.find().populate("profile");
+const instructors = await Instructor.find().populate("user");
     res.status(200).json({
       success: true,
       message: "Instructors retrieved successfully",
@@ -57,7 +57,7 @@ const getallInstructors = async (req, res) => {
 const getInstructorById = async (req, res) => {
   try {
     const instructor = await Instructor.findById(req.params.id).populate(
-      "profile"
+      "user"
     );
     if (!instructor) {
       return res.status(404).json({

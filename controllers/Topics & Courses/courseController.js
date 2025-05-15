@@ -11,17 +11,38 @@ const createCourse = async (req, res) => {
 
 const getAllCourses = async (req, res) => {
   try {
-    const courses = await Course.find().populate("instructorDetails");
-    res.status(200).json(courses);
+    const courses = await Course.find()
+      .populate({
+        path: "instructor",
+        populate: {
+          path: "user",
+          select: "username email firstName lastName profilePicture", // عدل الفيلدز حسب الحاجة
+        }
+      });
+
+    res.status(200).json({
+      success: true,
+      data: courses
+    });
   } catch (error) {
-    res.status(500).json({ message: error.message });
+    res.status(500).json({
+      success: false,
+      message: error.message
+    });
   }
 };
 
 // Get Course By ID
 const getCourseById = async (req, res) => {
   try {
-    const course = await Course.findById(req.params.id).populate("instructor");
+    const course = await Course.findById(req.params.id)
+      .populate({
+        path: "instructor",
+        populate: {
+          path: "user",
+          select: "username email firstName lastName profilePicture",
+        }
+      });
     if (!course) {
       return res.status(404).json({ message: "Course not found" });
     }
@@ -30,6 +51,8 @@ const getCourseById = async (req, res) => {
     res.status(500).json({ message: error.message });
   }
 };
+
+
 
 // Update Course
 const updateCourse = async (req, res) => {

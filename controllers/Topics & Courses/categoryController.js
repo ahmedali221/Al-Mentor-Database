@@ -1,4 +1,6 @@
 const Category = require("../../models/Topics & Courses/category");
+const Course = require("../../models/Topics & Courses/course");
+
 
 const createCategory = async (req, res) => {
   try {
@@ -44,23 +46,39 @@ const getAllCategories = async (req, res) => {
   }
 };
 
+
 const getCategoryById = async (req, res) => {
   try {
     const category = await Category.findById(req.params.id)
       .populate("topics")
-      .populate("subTopics")
-      .populate("courses");
+      .populate("subTopics");
+
     if (!category) {
-      return res
-        .status(404)
-        .json({ success: false, message: "Category not found" });
+      return res.status(404).json({
+        success: false,
+        message: "Category not found",
+      });
     }
+
+    // التعديل هنا
+    const courses = await Course.find({ category: category._id }).populate({
+      path: "instructor",
+      populate: {
+        path: "user",
+        select: "firstName lastName email profilePicture"
+      }
+    });
+
     res.status(200).json({
       success: true,
       message: "Category retrieved successfully",
-      data: category,
+      data: {
+        ...category.toObject(),
+        courses,
+      },
     });
   } catch (error) {
+    console.error("Error in getCategoryById:", error);
     res.status(500).json({
       success: false,
       message: "Failed to retrieve category",
@@ -68,6 +86,8 @@ const getCategoryById = async (req, res) => {
     });
   }
 };
+
+
 
 const updateCategory = async (req, res) => {
   try {
