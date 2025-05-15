@@ -34,7 +34,7 @@ const app = express();
 // Connect To LocalHost
 app.use(
   cors({
-    origin: "http://localhost:4200",
+    origin: "*",
     methods: ["GET", "POST", "PUT", "DELETE", "OPTIONS"],
     allowedHeaders: ["Content-Type", "Authorization"],
   })

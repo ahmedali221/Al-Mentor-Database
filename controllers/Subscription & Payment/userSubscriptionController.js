@@ -58,7 +58,6 @@ exports.subscribeUser = async (req, res) => {
       subscription: userSub,
     });
   } catch (err) {
-    console.error("Subscription error:", err);
     res.status(500).json({ message: err.message });
   }
 };
@@ -91,7 +90,7 @@ exports.cancelSubscription = async (req, res) => {
     const { id } = req.params;
     const updated = await UserSubscription.findByIdAndUpdate(
       id,
-      { status: "canceled" },
+      { status: { en: "canceled", ar: "ملغي" } }, // Set status as an object
       { new: true }
     );
     res.status(200).json(updated);
@@ -109,7 +108,7 @@ exports.activeSubscription = async (req, res) => {
       return res.status(404).json({ message: "Subscription not found" });
     }
 
-    subscription.status = "active";
+    subscription.status = { en: "active", ar: "نشط" }; // Set status as an object
     await subscription.save();
 
     res.status(200).json(subscription);
