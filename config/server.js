@@ -34,7 +34,7 @@ const app = express();
 // Connect To LocalHost
 app.use(
   cors({
-    origin: "http://localhost:4200",
+    origin: "*",
     methods: ["GET", "POST", "PUT", "DELETE", "OPTIONS"],
     allowedHeaders: ["Content-Type", "Authorization"],
   })
@@ -50,8 +50,8 @@ connectDB().then(() => {
   app.use("/api/users", userRoutes);
   app.use("/api/instructors", instructorRoutes);
   app.use("/api/saved-courses", userSavedCourseRoutes);
-  app.use("/api/courses", courseRoutes);
   app.use("/api/category", categoryRoutes);
+  app.use("/api/courses", courseRoutes);
   app.use("/api/lessons", lessonRoutes);
   app.use("/api/modules", moduleRoutes);
   app.use("/api/topics", topicRoutes);

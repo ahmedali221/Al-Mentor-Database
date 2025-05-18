@@ -67,10 +67,13 @@ const programSchema = new mongoose.Schema(
       {
         type: mongoose.Schema.Types.ObjectId,
         ref: "Course",
+        default: [],
       },
     ],
     learningOutcomes: [
       {
+        default: [],
+
         en: { type: String, required: true },
         ar: { type: String, required: true },
       },

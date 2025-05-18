@@ -47,3 +47,29 @@ exports.createPayment = async (req, res) => {
     res.status(500).json({ message: error.message });
   }
 };
+
+// Get all payments for a specific user
+exports.getPaymentsByUser = async (req, res) => {
+  try {
+    const { userId } = req.params;
+    const payments = await Payment.find({ user: userId })
+      .populate("subscription")
+      .populate("user");
+    res.status(200).json(payments);
+  } catch (error) {
+    res.status(500).json({ message: error.message });
+  }
+};
+
+// Get all payments
+exports.getAllPayments = async (req, res) => {
+  try {
+    const payments = await Payment.find()
+      .populate("subscription")
+      .populate("user");
+    res.status(200).json(payments);
+  } catch (error) {
+    res.status(500).json({ message: error.message });
+  }
+};
+

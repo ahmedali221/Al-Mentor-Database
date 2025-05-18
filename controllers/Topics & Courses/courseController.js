@@ -21,11 +21,34 @@ const getAllCourses = async (req, res) => {
 // Get Course By ID
 const getCourseById = async (req, res) => {
   try {
-    const course = await Course.findById(req.params.id).populate("instructor");
+    const course = await Course.findById(req.params.id).populate({
+      path: "instructor",
+      populate: {
+        path: "user", // populate the user inside the instructor
+      },
+    });
+
     if (!course) {
       return res.status(404).json({ message: "Course not found" });
     }
     res.status(200).json(course);
+  } catch (error) {
+    res.status(500).json({ message: error.message });
+  }
+};
+
+const getCoursesByInstructor = async (req, res) => {
+  try {
+    const { instructorId } = req.params;
+
+    const courses = await Course.find({ instructor: instructorId }).populate({
+      path: "instructor",
+      populate: {
+        path: "user",
+      },
+    });
+
+    res.status(200).json(courses);
   } catch (error) {
     res.status(500).json({ message: error.message });
   }
@@ -59,18 +82,21 @@ const deleteCourse = async (req, res) => {
     res.status(500).json({ message: error.message });
   }
 };
-const getCoursesByInstructor = async (req, res) => {
+
+const getCoursesByCategory = async (req, res) => {
   try {
-    const { instructorId } = req.params;
-
-    const courses = await Course.find({ instructor: instructorId }).populate("instructor");
-
+    const { categoryId } = req.params;
+    const courses = await Course.find({ category: categoryId }).populate({
+      path: "instructor",
+      populate: {
+        path: "user",
+      },
+    });
     res.status(200).json(courses);
   } catch (error) {
     res.status(500).json({ message: error.message });
   }
 };
-
 
 module.exports = {
   createCourse,
@@ -79,4 +105,5 @@ module.exports = {
   updateCourse,
   deleteCourse,
   getCoursesByInstructor,
+  getCoursesByCategory,
 };
