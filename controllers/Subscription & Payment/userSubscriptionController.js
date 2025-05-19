@@ -5,13 +5,19 @@ exports.subscribeUser = async (req, res) => {
   try {
     const { userId, subscriptionId } = req.body;
 
+    if (!userId || !subscriptionId) {
+      return res
+        .status(400)
+        .json({ message: "User ID and Subscription ID are required" });
+    }
+
     const subscription = await Subscription.findById(subscriptionId);
     if (!subscription) {
       return res.status(404).json({ message: "Subscription not found" });
     }
 
     const durationInDays =
-      subscription.duration.unit === "months"
+      subscription.duration.unit === "month"
         ? subscription.duration.value * 30
         : subscription.duration.value;
 
@@ -19,16 +25,40 @@ exports.subscribeUser = async (req, res) => {
     const endDate = new Date();
     endDate.setDate(startDate.getDate() + durationInDays);
 
-    const userSub = await UserSubscription.create({
-      user: userId,
-      subscription: subscriptionId,
-      startDate,
-      endDate,
-      status: "active",
+    // Check if user already has an active subscription
+    const existingSubscription = await UserSubscription.findOne({
+      userId: userId,
+      "status.en": "active",
     });
 
-    res.status(201).json(userSub);
+    if (existingSubscription) {
+      existingSubscription.subscriptionId = subscriptionId;
+      existingSubscription.startDate = startDate;
+      existingSubscription.endDate = endDate;
+      existingSubscription.status = { en: "active", ar: "نشط" };
+      await existingSubscription.save();
+
+      return res.status(200).json({
+        message: "Subscription updated successfully",
+        subscription: existingSubscription,
+      });
+    }
+
+    // Create new subscription
+    const userSub = await UserSubscription.create({
+      userId,
+      subscriptionId,
+      startDate,
+      endDate,
+      status: { en: "active", ar: "نشط" },
+    });
+
+    res.status(201).json({
+      message: "Subscription created successfully",
+      subscription: userSub,
+    });
   } catch (err) {
+    console.error("Subscription error:", err);
     res.status(500).json({ message: err.message });
   }
 };
@@ -36,10 +66,21 @@ exports.subscribeUser = async (req, res) => {
 exports.getUserSubscriptions = async (req, res) => {
   try {
     const { userId } = req.params;
-    const subs = await UserSubscription.find({ user: userId }).populate(
-      "subscription"
+    const subs = await UserSubscription.find({ userId }).populate(
+      "subscriptionId"
     );
     res.status(200).json(subs);
+  } catch (err) {
+    res.status(500).json({ message: err.message });
+  }
+};
+
+exports.getAllUserSubscriptions = async (req, res) => {
+  try {
+    const userSubscriptions = await UserSubscription.find()
+      .populate("subscriptionId")
+      .populate("userId");
+    res.status(200).json(userSubscriptions);
   } catch (err) {
     res.status(500).json({ message: err.message });
   }
@@ -48,12 +89,42 @@ exports.getUserSubscriptions = async (req, res) => {
 exports.cancelSubscription = async (req, res) => {
   try {
     const { id } = req.params;
-    const updated = await UserSubscription.findByIdAndUpdate(
-      id,
-      { status: "canceled" },
-      { new: true }
-    );
-    res.status(200).json(updated);
+
+    // Find the subscription by ID
+    const subscription = await UserSubscription.findById(id);
+
+    if (!subscription) {
+      return res
+        .status(404)
+        .json({ message: "The specified user subscription does not exist" });
+    }
+
+    // Check if the subscription has expired
+    const currentDate = new Date();
+    if (subscription.endDate < currentDate) {
+      subscription.status = { en: "expired", ar: "منتهي" };
+      await subscription.save();
+
+      return res.status(200).json({
+        message: "Subscription status updated to expired successfully",
+        subscription,
+      });
+    }
+
+    // Toggle the status based on the current value
+    const newStatus =
+      subscription.status.en === "active"
+        ? { en: "canceled", ar: "ملغي" }
+        : { en: "active", ar: "نشط" };
+
+    // Update the subscription with the new status
+    subscription.status = newStatus;
+    await subscription.save();
+
+    res.status(200).json({
+      message: `Subscription status updated to ${newStatus.en} successfully`,
+      subscription,
+    });
   } catch (err) {
     res.status(500).json({ message: err.message });
   }

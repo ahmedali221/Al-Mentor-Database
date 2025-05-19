@@ -4,44 +4,45 @@ const Subscription = require("../../models/Subscriptions & Payment/subscription"
 
 exports.createPayment = async (req, res) => {
   try {
-    const { userId, subscriptionName, amount, transactionId } = req.body;
+    const { user, subscription, amount, transactionId, currency, paymentMethod, status } = req.body;
 
-    if (!userId || !subscriptionName || !amount || !transactionId) {
-      return res.status(400).json({ message: "All fields are required" });
+    if (!user || !subscription || !amount || !transactionId || !currency || !paymentMethod || !status || !status.en || !status.ar) {
+      return res.status(400).json({ message: "All fields, including status in both languages, are required" });
     }
 
-    const user = await User.findById(userId);
-    if (!user) {
+    const userDoc = await User.findById(user);
+    if (!userDoc) {
       return res.status(404).json({ message: "User not found" });
     }
 
-    const subscription = await Subscription.findOne({ name: subscriptionName });
-    if (!subscription) {
+    const subscriptionDoc = await Subscription.findById(subscription);
+    if (!subscriptionDoc) {
       return res.status(404).json({ message: "Subscription not found" });
     }
 
-    const payment = await Payment.create({
-      userId,
-      subscriptionId: subscription._id,
-      amount,
-      transactionId,
-      status: "completed",
-    });
+    try {
+      const payment = await Payment.create({
+        user,
+        subscription,
+        amount,
+        currency,
+        transactionId,
+        paymentMethod,
+        status,
+      });
 
-    res.status(201).json({
-      message: "Payment created successfully",
-      payment,
-    });
-  } catch (error) {
-    res.status(500).json({ message: error.message });
-  }
-};
-
-exports.getPaymentsByUser = async (req, res) => {
-  try {
-    const { userId } = req.params;
-    const payments = await Payment.find({ userId }).populate("subscriptionId");
-    res.status(200).json(payments);
+      res.status(201).json({
+        message: "Payment created successfully",
+        payment,
+      });
+    } catch (error) {
+      if (error.code === 11000) {
+        // Handle duplicate transactionId error
+        res.status(400).json({ message: "Duplicate transaction ID" });
+      } else {
+        res.status(500).json({ message: error.message });
+      }
+    }
   } catch (error) {
     res.status(500).json({ message: error.message });
   }

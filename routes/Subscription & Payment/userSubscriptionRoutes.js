@@ -4,10 +4,14 @@ const {
   subscribeUser,
   getUserSubscriptions,
   cancelSubscription,
+  getAllUserSubscriptions,
+  deleteUserSubscription,
 } = require("../../controllers/Subscription & Payment/userSubscriptionController");
 
-router.post("/", subscribeUser);
-router.get("/:userId", getUserSubscriptions);
+router.post("/user", subscribeUser);
+router.get("/user/:userId", getUserSubscriptions);
 router.put("/cancel/:id", cancelSubscription);
+router.get("/", getAllUserSubscriptions);
+router.delete("/:id", deleteUserSubscription);
 
 module.exports = router;

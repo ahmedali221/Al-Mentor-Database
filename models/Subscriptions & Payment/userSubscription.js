@@ -2,24 +2,16 @@ const mongoose = require("mongoose");
 
 const userSubscriptionSchema = new mongoose.Schema(
   {
-    user: {
+    userId: {
       type: mongoose.Schema.Types.ObjectId,
       ref: "User",
       required: true,
       index: true,
     },
-    subscription: {
+    subscriptionId: {
       type: mongoose.Schema.Types.ObjectId,
       ref: "Subscription",
       required: true,
-      validate: {
-        validator: async function (v) {
-          const Subscription = mongoose.model("Subscription");
-          const exists = await Subscription.exists({ _id: v });
-          return !!exists;
-        },
-        message: "Subscription not found",
-      },
     },
     startDate: {
       type: Date,
@@ -72,7 +64,7 @@ userSubscriptionSchema.virtual("isValid").get(function () {
 });
 
 userSubscriptionSchema.index({ endDate: 1 });
-userSubscriptionSchema.index({ user: 1, status: 1 });
+userSubscriptionSchema.index({ userId: 1, status: 1 });
 
 userSubscriptionSchema.pre("save", function (next) {
   if (this.isModified("endDate") && new Date() > this.endDate) {

@@ -15,14 +15,14 @@ const moduleSchema = mongoose.Schema(
         required: true,
         trim: true,
         maxlength: 100,
-      }
+      },
     },
     course: {
       type: mongoose.Schema.Types.ObjectId,
       ref: "Course",
       required: true,
     },
- 
+
     order: {
       type: Number,
       required: true,
@@ -39,6 +39,7 @@ const moduleSchema = mongoose.Schema(
       {
         type: mongoose.Schema.Types.ObjectId,
         ref: "Lesson",
+        default: [],
       },
     ],
     completionCriteria: {
@@ -56,7 +57,7 @@ const moduleSchema = mongoose.Schema(
         type: String,
         enum: ["مبتدئ", "متوسط", "متقدم"],
         required: true,
-      }
+      },
     },
   },
   {

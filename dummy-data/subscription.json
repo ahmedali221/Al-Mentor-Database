@@ -1,0 +1,101 @@
+[
+  {
+    "name": {
+      "en": "Premium Plan",
+      "ar": "الخطة المميزة"
+    },
+    "description": {
+      "en": "Access to premium features for 1 year",
+      "ar": "الوصول إلى الميزات المميزة لمدة سنة كاملة"
+    },
+    "price": 99.99,
+    "currency": "USD",
+    "duration": {
+      "value": 12,
+      "unit": "months"
+    },
+    "trialPeriod": {
+      "enabled": false,
+      "durationDays": 7
+    },
+    "features": [],
+    "isActive": true,
+    "priority": 0
+  },
+  {
+    "name": {
+      "en": "Quarterly Plan",
+      "ar": "الخطة الربع سنوية"
+    },
+    "description": {
+      "en": "Get 3 months for the price of 2",
+      "ar": "احصل على 3 شهور بسعر شهرين"
+    },
+    "price": {
+      "amount": 799,
+      "originalAmount": 1197,
+      "currency": "EGP"
+    },
+    "duration": {
+      "value": 3,
+      "unit": "months"
+    },
+    "trialPeriod": {
+      "enabled": false,
+      "durationDays": 7
+    },
+    "features": [
+      {
+        "title": {
+          "en": "Save 33%",
+          "ar": "وفر 33%"
+        },
+        "description": {
+          "en": "Get 3 months for the price of 2",
+          "ar": "احصل على 3 شهور بسعر شهرين"
+        },
+        "icon": "discount"
+      }
+    ],
+    "isActive": true,
+    "priority": 2
+  },
+  {
+    "name": {
+      "en": "Yearly Plan",
+      "ar": "الخطة السنوية"
+    },
+    "description": {
+      "en": "Get 12 months for the price of 6",
+      "ar": "احصل على 12 شهر بسعر 6 شهور"
+    },
+    "price": {
+      "amount": 2399,
+      "originalAmount": 4788,
+      "currency": "EGP"
+    },
+    "duration": {
+      "value": 12,
+      "unit": "months"
+    },
+    "trialPeriod": {
+      "enabled": false,
+      "durationDays": 7
+    },
+    "features": [
+      {
+        "title": {
+          "en": "SAVE 50%",
+          "ar": "وفر 50%"
+        },
+        "description": {
+          "en": "Get 12 months for the price of 6",
+          "ar": "احصل على 12 شهر بسعر 6 شهور"
+        },
+        "icon": "savings"
+      }
+    ],
+    "isActive": true,
+    "priority": 1
+  }
+]
