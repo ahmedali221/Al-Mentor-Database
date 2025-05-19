@@ -37,14 +37,28 @@ const createInstructor = async (req, res) => {
     });
   }
 };
+
+// UPDATED: Pagination support, default limit 12
 const getallInstructors = async (req, res) => {
   try {
-    const instructors = await Instructor.find().populate("profile");
+    const page = parseInt(req.query.page) > 0 ? parseInt(req.query.page) : 1;
+    const limit = parseInt(req.query.limit) > 0 ? parseInt(req.query.limit) : 12;
+    const skip = (page - 1) * limit;
+
+    const total = await Instructor.countDocuments();
+    const instructors = await Instructor.find()
+      .skip(skip)
+      .limit(limit)
+      .populate("profile");
+
     res.status(200).json({
       success: true,
       message: "Instructors retrieved successfully",
       data: instructors,
       count: instructors.length,
+      page,
+      totalPages: Math.ceil(total / limit),
+      total,
     });
   } catch (error) {
     res.status(400).json({
