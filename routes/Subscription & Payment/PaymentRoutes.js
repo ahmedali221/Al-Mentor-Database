@@ -5,5 +5,7 @@ const paymentController = require("../../controllers/Subscription & Payment/Paym
 router.post("/", paymentController.createPayment);
 router.get("/user/:userId", paymentController.getPaymentsByUser);
 router.get("/", paymentController.getAllPayments);
+// delete payment
+router.delete("/:paymentId", paymentController.deletePayment);
 
 module.exports = router;

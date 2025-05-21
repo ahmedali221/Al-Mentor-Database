@@ -4,10 +4,33 @@ const Subscription = require("../../models/Subscriptions & Payment/subscription"
 
 exports.createPayment = async (req, res) => {
   try {
-    const { user, subscription, amount, transactionId, currency, paymentMethod, status } = req.body;
+    const {
+      user,
+      subscription,
+      amount,
+      transactionId,
+      currency,
+      paymentMethod,
+      status,
+    } = req.body;
 
-    if (!user || !subscription || !amount || !transactionId || !currency || !paymentMethod || !status || !status.en || !status.ar) {
-      return res.status(400).json({ message: "All fields, including status in both languages, are required" });
+    if (
+      !user ||
+      !subscription ||
+      !amount ||
+      !transactionId ||
+      !currency ||
+      !paymentMethod ||
+      !status ||
+      !status.en ||
+      !status.ar
+    ) {
+      return res
+        .status(400)
+        .json({
+          message:
+            "All fields, including status in both languages, are required",
+        });
     }
 
     const userDoc = await User.findById(user);
@@ -72,4 +95,16 @@ exports.getAllPayments = async (req, res) => {
     res.status(500).json({ message: error.message });
   }
 };
-
+// Delete a payment
+exports.deletePayment = async (req, res) => {
+  try {
+    const { paymentId } = req.params;
+    const payment = await Payment.findByIdAndDelete(paymentId);
+    if (!payment) {
+      return res.status(404).json({ message: "Payment not found" });
+    }
+    res.status(200).json({ message: "Payment deleted successfully" });
+  } catch (error) {
+    res.status(500).json({ message: error.message });
+  }
+}
