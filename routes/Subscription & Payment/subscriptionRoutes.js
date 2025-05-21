@@ -4,8 +4,8 @@ const {
   createSubscription,
   getAllSubscriptions,
   deleteSubscription,
-  updateSubscription,
-  getSubscriptionById
+  updateSubscription, 
+  getSubscriptionById,
 } = require("../../controllers/Subscription & Payment/subscriptionController");
 
 router.post("/", createSubscription);

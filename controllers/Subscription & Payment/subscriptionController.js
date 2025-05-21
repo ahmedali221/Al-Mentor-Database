@@ -50,7 +50,6 @@ exports.updateSubscription = async (req, res) => {
     res.status(400).json({ message: err.message });
   }
 };
-
 exports.getSubscriptionById = async (req, res) => {
   try {
     const { id } = req.params;

@@ -22,6 +22,7 @@ const enrollmentRoutes = require("../routes/Subscription & Payment/EnrollmentRou
 const paymentRoutes = require("../routes/Subscription & Payment/PaymentRoutes");
 const subscriptionRoutes = require("../routes/Subscription & Payment/subscriptionRoutes");
 const userSubscriptionRoutes = require("../routes/Subscription & Payment/userSubscriptionRoutes");
+const stripeRoutes = require("../routes/Subscription & Payment/stripeRoute");
 
 // Programs Routes
 const programRoutes = require("../routes/Programs/programRoute");
@@ -50,8 +51,8 @@ connectDB().then(() => {
   app.use("/api/users", userRoutes);
   app.use("/api/instructors", instructorRoutes);
   app.use("/api/saved-courses", userSavedCourseRoutes);
-  app.use("/api/courses", courseRoutes);
   app.use("/api/category", categoryRoutes);
+  app.use("/api/courses", courseRoutes);
   app.use("/api/lessons", lessonRoutes);
   app.use("/api/modules", moduleRoutes);
   app.use("/api/topics", topicRoutes);
@@ -60,7 +61,7 @@ connectDB().then(() => {
   app.use("/api/payments", paymentRoutes);
   app.use("/api/subscriptions", subscriptionRoutes);
   app.use("/api/user-subscriptions", userSubscriptionRoutes);
-
+  app.use("/api/stripe", stripeRoutes);
   app.use("/api/programs", programRoutes);
   app.use("/api/program-courses", programCourseRoutes);
   app.use("/api/user-program-progress", userProgramProgressRoutes);

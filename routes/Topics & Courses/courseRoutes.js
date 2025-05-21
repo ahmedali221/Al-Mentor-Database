@@ -7,13 +7,15 @@ const {
   updateCourse,
   deleteCourse,
   getCoursesByInstructor,
+  getCoursesByCategory,
 } = require("../../controllers/Topics & Courses/courseController");
 
 router.post("/", createCourse);
 router.get("/", getAllCourses);
+router.get("/category/:categoryId", getCoursesByCategory);
+router.get("/instructor/:instructorId", getCoursesByInstructor);
 router.get("/:id", getCourseById);
 router.put("/:id", updateCourse);
 router.delete("/:id", deleteCourse);
-router.get("/instructor/:instructorId", getCoursesByInstructor);
 
 module.exports = router;

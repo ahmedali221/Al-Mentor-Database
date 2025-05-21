@@ -42,7 +42,7 @@ const courseSchema = new mongoose.Schema(
     },
     instructor: {
       type: mongoose.Schema.Types.ObjectId,
-      ref: "User",
+      ref: "Instructor",
       required: true,
     },
     category: {
@@ -51,6 +51,20 @@ const courseSchema = new mongoose.Schema(
       required: true,
     },
 
+    thumbnail: {
+      type: String,
+      required: true,
+      validate: {
+        validator: (v) => {   
+          return (
+            v.startsWith("http://") ||
+            v.startsWith("https://") ||
+            v.startsWith("data:image/")
+          );
+        },
+        message: (props) => `${props.value} is not a valid URL!`,
+      },
+    },
     // Content
     description: {
       en: {
