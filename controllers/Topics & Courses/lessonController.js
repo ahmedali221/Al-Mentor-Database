@@ -3,8 +3,8 @@ const Lesson = require("../../models/Topics & Courses/lesson");
 const createLesson = async (req, res) => {
   try {
     const lesson = await Lesson.create(req.body);
-    const populated = await lesson.populate('course');
-    res.status(201).json(populated); 
+    const populated = await lesson.populate("course");
+    res.status(201).json(populated);
   } catch (error) {
     res.status(400).json({ message: error.message });
   }
@@ -12,7 +12,18 @@ const createLesson = async (req, res) => {
 
 const getAllLessons = async (req, res) => {
   try {
-    const lessons = await Lesson.find().populate('course');
+    const lessons = await Lesson.find().populate([
+      {
+        path: "course",
+        populate: {
+          path: "instructor",
+          populate: { path: "user" },
+        },
+      },
+      {
+        path: "module",
+      },
+    ]);
     res.status(200).json(lessons);
   } catch (error) {
     res.status(500).json({ message: error.message });
@@ -20,14 +31,25 @@ const getAllLessons = async (req, res) => {
 };
 const getLessonsByCourse = async (req, res) => {
   try {
-    const lessons = await Lesson.find({ course: req.params.courseId });
+    const lessons = await Lesson.find({ course: req.params.courseId }).populate(
+      [
+        {
+          path: "course",
+          populate: {
+            path: "instructor",
+            populate: { path: "user" },
+          },
+        },
+        {
+          path: "module",
+        },
+      ]
+    );
     res.status(200).json(lessons);
   } catch (error) {
     res.status(500).json({ message: error.message });
   }
 };
-
-
 
 // Get Lesson By ID
 const getLessonById = async (req, res) => {
