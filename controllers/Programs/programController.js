@@ -24,8 +24,6 @@ const getProgramById = async (req, res) => {
   try {
     const program = await Program.findById(req.params.id).populate({
       path: "courseDetails",
-      // This is like second Population
-      // After Showing the instructor data we populate the user field and get its data from the ref id
     });
 
     if (!program) {

@@ -4,6 +4,8 @@ const connectDB = require("./db");
 const userRoutes = require("../routes/Users/userRoute");
 const instructorRoutes = require("../routes/Users/instructorRoutes");
 const userSavedCourseRoutes = require("../routes/Users/userSavedCourseRoutes");
+const chatRoutes = require("../routes/Users/chatRoutes");
+const instructorSessionRoutes = require("../routes/Users/instructorSessionRoutes");
 
 // Courses Routes
 const courseRoutes = require("../routes/Topics & Courses/courseRoutes");
@@ -40,7 +42,7 @@ app.use(
     allowedHeaders: ["Content-Type", "Authorization"],
   })
 );
-
+app.use(cors());
 app.use(express.json());
 
 require("dotenv").config();
@@ -66,6 +68,8 @@ connectDB().then(() => {
   app.use("/api/program-courses", programCourseRoutes);
   app.use("/api/user-program-progress", userProgramProgressRoutes);
   app.use("/api/favorite-lessons", favoriteLessonRoutes);
+  app.use("/api/chats", chatRoutes);
+  app.use("/api/instructor-sessions", instructorSessionRoutes);
 
   app.use((err, req, res, next) => {
     console.error(err.stack);
