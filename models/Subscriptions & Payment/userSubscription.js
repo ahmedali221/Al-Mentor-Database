@@ -34,12 +34,7 @@ const userSubscriptionSchema = new mongoose.Schema(
         default: "active",
         required: true,
       },
-      ar: {
-        type: String,
-        enum: ["نشط", "منتهي", "ملغي"],
-        default: "نشط",
-        required: true,
-      },
+    
     },
 
     notifications: {
