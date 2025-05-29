@@ -41,6 +41,10 @@ const instructorSessionSchema = new mongoose.Schema(
       enum: ["pending", "approved", "rejected", "completed", "cancelled"],
       default: "pending",
     },
+    chat: {
+      type: mongoose.Schema.Types.ObjectId,
+      ref: "Chat",
+    },
     approvalDate: {
       type: Date,
     },

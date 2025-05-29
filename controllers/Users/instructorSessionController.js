@@ -41,6 +41,16 @@ exports.requestSession = async (req, res) => {
       return res.status(404).json({ message: "Instructor not found" });
     }
 
+    let chatId = null;
+    // Always create a chat session for this instructor session
+    const Chat = require("../../models/Users/chat");
+    const chat = await Chat.create({
+      user: userId,
+      messages: [],
+      title: `Chat with Instructor ${instructorId}`,
+    });
+    chatId = chat._id;
+
     // Create new session request
     const session = await InstructorSession.create({
       user: userId,
@@ -50,6 +60,7 @@ exports.requestSession = async (req, res) => {
       requestedDate: new Date(requestedDate),
       requestedDuration,
       status: "pending",
+      chat: chatId,
     });
 
     // Return the created session
@@ -61,7 +72,8 @@ exports.requestSession = async (req, res) => {
           path: "user",
           select: "username email firstName lastName",
         },
-      });
+      })
+      .populate("chat");
 
     res.status(201).json({
       success: true,

@@ -1,5 +1,7 @@
 const express = require("express");
+const http = require("http");
 const connectDB = require("./db");
+const initializeWebSocketServer = require("../websocket/chatServer");
 // Users Routes
 const userRoutes = require("../routes/Users/userRoute");
 const instructorRoutes = require("../routes/Users/instructorRoutes");
@@ -25,6 +27,7 @@ const paymentRoutes = require("../routes/Subscription & Payment/PaymentRoutes");
 const subscriptionRoutes = require("../routes/Subscription & Payment/subscriptionRoutes");
 const userSubscriptionRoutes = require("../routes/Subscription & Payment/userSubscriptionRoutes");
 const stripeRoutes = require("../routes/Subscription & Payment/stripeRoute");
+const webhookRoutes = require("../routes/Subscription & Payment/Webhook");
 
 // Programs Routes
 const programRoutes = require("../routes/Programs/programRoute");
@@ -33,6 +36,10 @@ const userProgramProgressRoutes = require("../routes/Programs/userProgramProgres
 
 const cors = require("cors");
 const app = express();
+const server = http.createServer(app);
+
+// Initialize WebSocket server
+const wss = initializeWebSocketServer(server);
 
 // Connect To LocalHost
 app.use(
@@ -70,6 +77,7 @@ connectDB().then(() => {
   app.use("/api/favorite-lessons", favoriteLessonRoutes);
   app.use("/api/chats", chatRoutes);
   app.use("/api/instructor-sessions", instructorSessionRoutes);
+  app.use("/api", webhookRoutes);
 
   app.use((err, req, res, next) => {
     console.error(err.stack);
@@ -77,5 +85,5 @@ connectDB().then(() => {
   });
 
   const PORT = process.env.PORT || 5000;
-  app.listen(PORT, () => console.log(`Server started on port ${PORT}`));
+  server.listen(PORT, () => console.log(`Server started on port ${PORT}`));
 });

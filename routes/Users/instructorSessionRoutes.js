@@ -2,7 +2,10 @@ const express = require("express");
 const router = express.Router();
 const instructorSessionController = require("../../controllers/Users/instructorSessionController");
 
-// Request a new session with an instructor
+// Request a new session with an instructor (chat or video)
+// @route   POST /
+// @desc    Request a new instructor session (chat only)
+// @access  Private
 router.post("/", instructorSessionController.requestSession);
 
 // Get all sessions for a user
