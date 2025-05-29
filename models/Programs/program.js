@@ -79,16 +79,8 @@ const programSchema = new mongoose.Schema(
       },
     ],
     category: {
-      en: {
-        type: String,
-        enum: ["language", "business", "development"],
-        required: true,
-      },
-      ar: {
-        type: String,
-        enum: ["لغة", "أعمال", "تطوير"],
-        required: true,
-      },
+      en: { type: String, required: true },
+      ar: { type: String, required: true },
     },
   },
   {
