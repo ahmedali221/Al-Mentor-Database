@@ -5,7 +5,9 @@ const stripe = Stripe(
 
 exports.createCheckoutSession = async (req, res) => {
   try {
-    const { amount, currency } = req.body;
+const { amount, currency, userId, subscriptionId, paymentId } = req.body;
+console.log(" Received body:", req.body);
+
 
     if (!amount || !currency) {
       return res.status(400).json({ message: "Amount and currency required" });
@@ -28,11 +30,17 @@ exports.createCheckoutSession = async (req, res) => {
       mode: "payment",
       success_url: "https://example.com/success",
       cancel_url: "https://example.com/cancel",
+       metadata: {
+        userId,
+        subscriptionId,
+        paymentId,
+      },
     });
 
     res.status(200).json({ url: session.url });
   } catch (error) {
     console.error("Stripe Checkout Error:", error.message);
+    
     res.status(500).json({ message: error.message });
   }
 };

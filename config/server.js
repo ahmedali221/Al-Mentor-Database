@@ -25,6 +25,9 @@ const paymentRoutes = require("../routes/Subscription & Payment/PaymentRoutes");
 const subscriptionRoutes = require("../routes/Subscription & Payment/subscriptionRoutes");
 const userSubscriptionRoutes = require("../routes/Subscription & Payment/userSubscriptionRoutes");
 const stripeRoutes = require("../routes/Subscription & Payment/stripeRoute");
+const webhookRoutes = require('../routes/Subscription & Payment/Webhook'); 
+
+
 
 // Programs Routes
 const programRoutes = require("../routes/Programs/programRoute");
@@ -43,6 +46,8 @@ app.use(
   })
 );
 app.use(cors());
+  app.use('/api', webhookRoutes); //added this line before express.json() to ensure raw body parsing for webhook events
+
 app.use(express.json());
 
 require("dotenv").config();
@@ -70,6 +75,7 @@ connectDB().then(() => {
   app.use("/api/favorite-lessons", favoriteLessonRoutes);
   app.use("/api/chats", chatRoutes);
   app.use("/api/instructor-sessions", instructorSessionRoutes);
+
 
   app.use((err, req, res, next) => {
     console.error(err.stack);
