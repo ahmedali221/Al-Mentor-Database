@@ -62,10 +62,74 @@ const deleteProgram = async (req, res) => {
   }
 };
 
+const addCourseToProgram = async (req, res) => {
+  try {
+    const { programId, courseId } = req.body;
+
+    const program = await Program.findById(programId);
+    if (!program) {
+      return res.status(404).json({ message: "Program not found" });
+    }
+
+    // Check if course already exists in program
+    if (program.courses.includes(courseId)) {
+      return res
+        .status(400)
+        .json({ message: "Course already exists in this program" });
+    }
+
+    // Add course to program
+    program.courses.push(courseId);
+    await program.save();
+
+    // Return updated program with populated course details
+    const updatedProgram = await Program.findById(programId).populate({
+      path: "courseDetails",
+    });
+
+    res.status(200).json(updatedProgram);
+  } catch (error) {
+    res.status(500).json({ message: error.message });
+  }
+};
+
+const removeCourseFromProgram = async (req, res) => {
+  try {
+    const { programId, courseId } = req.body;
+
+    const program = await Program.findById(programId);
+    if (!program) {
+      return res.status(404).json({ message: "Program not found" });
+    }
+
+    // Check if course exists in program
+    if (!program.courses.includes(courseId)) {
+      return res.status(400).json({ message: "Course is not in this program" });
+    }
+
+    // Remove course from program
+    program.courses = program.courses.filter(
+      (course) => course.toString() !== courseId
+    );
+    await program.save();
+
+    // Return updated program with populated course details
+    const updatedProgram = await Program.findById(programId).populate({
+      path: "courseDetails",
+    });
+
+    res.status(200).json(updatedProgram);
+  } catch (error) {
+    res.status(500).json({ message: error.message });
+  }
+};
+
 module.exports = {
   createProgram,
   getAllPrograms,
   getProgramById,
   updateProgram,
   deleteProgram,
+  addCourseToProgram,
+  removeCourseFromProgram,
 };
