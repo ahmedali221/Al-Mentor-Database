@@ -1,4 +1,5 @@
 const Instructor = require("../../models/Users/instructor");
+const Course = require("../../models/Topics & Courses/course"); // Add this at the top
 
 const createInstructor = async (req, res) => {
   try {
@@ -37,14 +38,28 @@ const createInstructor = async (req, res) => {
     });
   }
 };
+
 const getallInstructors = async (req, res) => {
   try {
-    const instructors = await Instructor.find().populate("profile");
+    const page = parseInt(req.query.page) > 0 ? parseInt(req.query.page) : 1;
+    const limit =
+      parseInt(req.query.limit) > 0 ? parseInt(req.query.limit) : 12;
+    const skip = (page - 1) * limit;
+
+    const total = await Instructor.countDocuments();
+    const instructors = await Instructor.find()
+      .skip(skip)
+      .limit(limit)
+      .populate("profile");
+
     res.status(200).json({
       success: true,
       message: "Instructors retrieved successfully",
       data: instructors,
       count: instructors.length,
+      page,
+      totalPages: Math.ceil(total / limit),
+      total,
     });
   } catch (error) {
     res.status(400).json({
@@ -129,10 +144,29 @@ const deleteInstructor = async (req, res) => {
   }
 };
 
+const getInstructorCourses = async (req, res) => {
+  try {
+    const { id } = req.params; // instructor id
+    const courses = await Course.find({ instructor: id }).populate("category");
+    res.status(200).json({
+      success: true,
+      message: "Instructor courses retrieved successfully",
+      data: courses,
+      count: courses.length,
+    });
+  } catch (error) {
+    res.status(500).json({
+      success: false,
+      message: error.message,
+    });
+  }
+};
+
 module.exports = {
   createInstructor,
   getallInstructors,
   getInstructorById,
   updateInstructor,
   deleteInstructor,
+  getInstructorCourses, // Add this line
 };
